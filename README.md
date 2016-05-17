@@ -6,6 +6,8 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -wdt 3840 -
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
  
 Basic parameters:
+-v or -V [version]
+which specifies the encoder version and copyright.
 
 -preset [preset_value], 
 which specifies the encoder speed by on of the character string: superfast veryfast fast medium slow veryslow.
@@ -24,6 +26,9 @@ which specifies the frame rate of the input video by a positive integer value fr
 
 -iper [intraperiod], 
 which specifies the maximum distances between consecutive I picture by a positive integer value intraperiod.
+
+-psnr [psnr calculation]
+which specifies psnr calculation method. 0 means disable psnr calculation, 1 means enable psnr calculation and output the overall psnr result. 2 means enable psnr calculation and output psnr info for each frame.
 
 -rc [rctype], 
 which specifies the rate control type by the positive integer value rctype valuing among values 0 and 1. There are two cases:
@@ -44,4 +49,24 @@ which specifies the number of frames to be encoded for the input video by a posi
 
 -threads [thread_no], 
 which specifies the number of threads used to encode the input video by a non-negative value thread_no. Default: thread_no = 0, when all available threads can be utilized.
+
+#DECODER
+
+AppEncoder_x64.exe -b test.265 -o test.yuv -threads 2
+
+Basic parameters:
+-v or -V [version]
+which specifies the encoder version and copyright.
+
+-b [bitstream],
+which specifies input bitstream file.
+
+
+Optional parameters:
+
+-o [output]
+which specifies output yuv file.
+
+-threads [threadnum]
+which specifies how many threads are used for decoding process.
 
