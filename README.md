@@ -60,7 +60,7 @@ which specifies psnr calculation method by a non-negative value [psnrcalc], and
 
 -o [reconstructYUV], 
 
-which specifies the address of the reconstrcuted yuv file in 4:2:0 format by a character string [reconstructYUV[. Default: no reconstructed YUV file is output.
+which specifies the address of the reconstrcuted yuv file in 4:2:0 format by a character string [reconstructYUV]. Default: no reconstructed YUV file is output.
 
 -frms [frame_no], 
 
