@@ -52,11 +52,12 @@ which specifies the number of threads used to encode the input video by a non-ne
 
 #DECODER
 
-AppEncoder_x64.exe -b test.265 -o test.yuv -threads 2
+AppDecoder_x64.exe -b test.265 -o test.yuv -threads 2
 
 Basic parameters:
+
 -v or -V [version]
-which specifies the encoder version and copyright.
+which specifies the decoder version and copyright.
 
 -b [bitstream],
 which specifies input bitstream file.
