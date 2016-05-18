@@ -68,5 +68,5 @@ Optional parameters:
 which specifies output yuv file.
 
 -threads [threadnum]
-which specifies how many threads are used for decoding process.
+which specifies how many threads are used for decoding process. same as encoder
 
