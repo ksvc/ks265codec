@@ -10,10 +10,6 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -wdt 3840 -
  
 ##Basic parameters:
 
--v or -V [version],
-
-which specifies the version and copyright of the encoder.
-
 -preset [preset_value], 
 
 which specifies the encoding speed by the character strings [preset_value], among strings of "superfast", "veryfast", "fast", "medium", "slow", "veryslow" and "placebo".
@@ -50,6 +46,10 @@ which specifies the address of the output stream file in HEVC/H.265 format by a 
 
 
 ##Optional parameters:
+
+-v or -V [version],
+
+which is utilized to print the version and copyright of the encoder.
 
 -psnr [psnrcalc],
 
