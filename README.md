@@ -12,7 +12,7 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -wdt 3840 -
 
 -preset [preset_value], 
 
-which specifies the encoding speed by the character strings [preset_value], among strings of "superfast", "veryfast", "fast", "medium", "slow", "veryslow" and "placebo".
+which specifies the encoding speed by the character string [preset_value], among strings of "superfast", "veryfast", "fast", "medium", "slow", "veryslow" and "placebo".
 
 -i [input_filename], 
 
