@@ -10,46 +10,39 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -wdt 3840 -
  
 ##Basic parameters:
 
--v or -V [version]
+-v or -V [version],
 
-which specifies the encoder version and copyright.
+which specifies the version and copyright of the encoder.
 
 -preset [preset_value], 
 
-which specifies the encoder speed by on of the character string: superfast veryfast fast medium slow veryslow.
+which specifies the encoding speed by the character strings [preset_value], among strings of "superfast", "veryfast", "fast", "medium", "slow", "veryslow" and "placebo".
 
 -i [input_filename], 
 
-which specifies the address of the input YUV file in 4:2:0 sampling format by a character string input_filename.
+which specifies the address of the input YUV file in 4:2:0 sampling format by a character string [input_filename].
 
 -wdt [width], 
 
-which specifies the image width of the input video by a positive integer value width. 
+which specifies the image width of the input video by a positive integer value [width]. 
 
 -hgt [height], 
 
-which specifies the image height of the input video by a positive integer value height.
+which specifies the image height of the input video by a positive integer value [height].
 
 -fr [framerate], 
 
-which specifies the frame rate of the input video by a positive integer value framerate.
+which specifies the frame rate of the input video by a positive integer value [framerate].
 
 -iper [intraperiod], 
 
-which specifies the maximum distances between consecutive I picture by a positive integer value intraperiod.
-
--psnr [psnr calculation]
-
-which specifies psnr calculation method.
-* 0 means disable psnr calculation,
-* 1 means enable psnr calculation and output the overall psnr result. 
-* 2 means enable psnr calculation and output psnr info for each frame.
+which specifies the maximum distances between consecutive I pictures by a positive integer value [intraperiod].
 
 -rc [rctype], 
 
-which specifies the rate control type by the positive integer value rctype valuing among values 0 and 1. There are two cases:
-* -br [bitrate] should be followed. If rctype equals to 1, a parameter -br [bitrate] should be followed and specifies the target encoding bit-rate by the positive value bitrate (kbps,kilo bit rate per second). 
-* -qp [qp_value] should be followed. If rctype equals to 0, a parameter -qp [qp_value] should be followed and specifies the target encoding quantization parameter by the positive value qp_value (0~51). 
+which specifies the rate control type by the positive integer value [rctype] valuing among values 0 and 1. There are two cases:
+* -br [bitrate] should be followed. If [rctype] equals to 1, a parameter -br [bitrate] should be followed and specifies the target encoding bit-rate by the positive value [bitrate] (kbps,kilo bit rate per second). 
+* -qp [qp_value] should be followed. If [rctype] equals to 0, a parameter -qp [qp_value] should be followed and specifies the target encoding quantization parameter by the positive value [qp_value] ranging from 0 to 51. 
 
 -b [stream_filename], 
 
@@ -58,17 +51,24 @@ which specifies the address of the output stream file in HEVC/H.265 format by a 
 
 ##Optional parameters:
 
+-psnr [psnrcalc],
+
+which specifies psnr calculation method by a non-negative value [psnrcalc], and
+* 0 (as a default value) means disabling psnr calculation,
+* 1 means enabling psnr calculation and outputing the overall psnr result. 
+* 2 means enabling psnr calculation and outputing psnr info for each frame.
+
 -o [reconstructYUV], 
 
-which specifies the address of the reconstrcuted yuv file in 4:2:0 format by a character string [reconstructYUV]. Default: no reconstructed YUV file is output.
+which specifies the address of the reconstrcuted yuv file in 4:2:0 format by a character string [reconstructYUV[. Default: no reconstructed YUV file is output.
 
 -frms [frame_no], 
 
-which specifies the number of frames to be encoded for the input video by a positive integer value frame_no. Default: frame_no = -1, when all input frames are encoded.
+which specifies the number of frames to be encoded for the input video by a positive integer value [frame_no]. Default: [frame_no] = -1, when all input frames are encoded.
 
 -threads [thread_no], 
 
-which specifies the number of threads used to encode the input video by a non-negative value thread_no. Default: thread_no = 0, when all available threads can be utilized.
+which specifies the number of threads used to encode the input video by a non-negative value [thread_no]. Default: [thread_no] = 0, when all available threads can be utilized.
 
 #DECODER
 
@@ -82,16 +82,17 @@ which specifies the decoder version and copyright.
 
 -b [bitstream],
 
-which specifies input bitstream file.
+which specifies input bit-stream file by a character string [bitstream].
 
 
 ##Optional parameters:
 
--o [output]
+-o [output],
 
-which specifies output yuv file.
+which specifies the decoded yuv file name by a character string [output].
 
--threads [threadnum]
-which specifies how many threads are used for decoding process. same as encoder
+-threads [threadnum],
+
+which specifies the number of threads used for decoding process by a non-negative value [threadnum]. Default: [threadnum] = 0, when all available threads can be utilized.
 
 
