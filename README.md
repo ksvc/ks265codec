@@ -98,7 +98,7 @@ which specifies the number of threads used for decoding process by a non-negativ
 
 #Performance
 
-On test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265-v1.9 in the speed form of encoded frames per second9(fps):
+On test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265-v1.9 in the speed form of encoded frames per second (fps):
 
 
 ##Real-Time Broadcasting
