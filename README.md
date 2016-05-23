@@ -103,18 +103,18 @@ On test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265
 
 ##Real-Time Broadcasting
 
-When 1 thread is utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 1.3% speed decrease over X264@veryfast, and 34.3% BDRate savings with only 71.8% speed up over X265@veryfast
+When 1 thread is utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 1.3% speed decrease over X264@veryfast, and 34.3% BDRate savings with 71.8% speed up over X265@veryfast
 
-When all threads(24) are utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 11.7% speed decrease over X264@ultrafast, and 35.7% BDRate savings with only 53.6% speed up over X265@ultrafast
+When all threads(24) are utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 11.7% speed decrease over X264@ultrafast, and 35.7% BDRate savings with 53.6% speed up over X265@ultrafast
 
 
 ##Offline Transcoding
 
-When 1 thread is utilized, KSC265@slow achieves 38.7% BDRate savings with only 10.7% speed decrease over X264@slow, and 17.2% BDRate savings with only 155.0% speed up over X265@slow
+When 1 thread is utilized, KSC265@slow achieves 38.7% BDRate savings with only 10.7% speed decrease over X264@slow, and 17.2% BDRate savings with 155.0% speed up over X265@slow
 
-When all threads(24) are utilized, KSC265@slow achieves 38.7% BDRate savings with only 11.4% speed decrease over X264@slow, and 16.4% BDRate savings with only 168.0% speed up over X265@slow
+When all threads(24) are utilized, KSC265@slow achieves 38.7% BDRate savings with only 11.4% speed decrease over X264@slow, and 16.4% BDRate savings with 168.0% speed up over X265@slow
 
 
 ##Highest Compression ratio
 
-When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with only 39.9% speed up over X264@placebo, and 11.5% BDRate savings with only 203.6% speed up over X265@placebo
+When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with only 39.9% speed up over X264@placebo, and 11.5% BDRate savings with 203.6% speed up over X265@placebo
