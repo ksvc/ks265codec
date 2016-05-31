@@ -103,9 +103,9 @@ On test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265
 
 ##Real-Time Broadcasting
 
-When 1 thread is utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 1.3% speed decrease over X264@veryfast, and 34.3% BDRate savings with 71.8% speed up over X265@veryfast
+When 1 thread is utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 1.3% speed decrease over X264@veryfast, and 34.3% BDRate savings with 71.8% speed up over X265@ultrafast
 
-When all threads(24) are utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 11.7% speed decrease over X264@ultrafast, and 35.7% BDRate savings with 53.6% speed up over X265@ultrafast
+When all threads(24) are utilized, KSC265@veryfast achieves 47.9% BDRate savings with only 11.7% speed decrease over X264@veryfast, and 35.7% BDRate savings with 53.6% speed up over X265@ultrafast
 
 
 ##Offline Transcoding
