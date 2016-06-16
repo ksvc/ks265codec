@@ -117,4 +117,4 @@ When all threads(24) are utilized, KSC265@slow achieves 38.7% BDRate savings wit
 
 ##Highest Compression ratio
 
-When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with only 39.9% speed up over X264@placebo, and 11.5% BDRate savings with 203.6% speed up over X265@placebo
+When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with 39.9% speed up over X264@placebo, and 11.5% BDRate savings with 203.6% speed up over X265@placebo
