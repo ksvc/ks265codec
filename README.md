@@ -98,7 +98,15 @@ which specifies the number of threads used for decoding process by a non-negativ
 
 #Performance
 
-On test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265-v1.9 in the speed form of encoded frames per second (fps), the average performance of KS265 is shown as follows:
+KSC265 is compared with X265 and QY265 on Win7@i5-4670 using following parameters:
+
+x264.exe -o out.264 /home/qytest/yuvfiles/BQSquare_416x240_60.yuv --input-res 416x240 --preset [veryfast/slow/placebo] --fps [framerate] --profile high --aq-mode 0 --no-psy  --psnr  --bitrate [number]  --keyint [framerate * 10] --frames 1000000
+
+x265.exe -o out.265 --input /home/qytest/yuvfiles/BQSquare_416x240_60.yuv --input-res 416x240 --preset [ultrafast/slow/placebo] --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq --psnr  --bitrate [number] --frame-threads 1 --keyint [framerate * 10] --frames 1000000
+
+AppEncoder_x64.exe -b out.265 -i /home/qytest/yuvfiles/BQSquare_416x240_60.yuv -preset [veryfast/slow/veryslow] -tune offline -psnr 2 -rc 1 -br [number] -frms 1000000 -iper [framerate * 10]
+
+Then on test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265-v1.9 in the speed form of encoded frames per second (fps), the average performance of KS265 is shown as follows:
 
 
 ##Real-Time Broadcasting
@@ -117,4 +125,4 @@ When all threads(24) are utilized, KSC265@slow achieves 38.7% BDRate savings wit
 
 ##Highest Compression ratio
 
-When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with only 39.9% speed up over X264@placebo, and 11.5% BDRate savings with 203.6% speed up over X265@placebo
+When all threads(24) are utilized, KSC265@veryslow achieves 36.4% BDRate savings with 39.9% speed up over X264@placebo, and 11.5% BDRate savings with 203.6% speed up over X265@placebo
