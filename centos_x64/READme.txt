@@ -1,2 +1,2 @@
 CentOS release 6.5
-gcc 4.8.4
+gcc 4.8.2-15
