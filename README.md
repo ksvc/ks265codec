@@ -136,16 +136,16 @@ When all threads(4) are utilized, KSC265@veryfast achieves 40.8% BDRate savings 
 
 ##Real-Time Broadcasting
 
-When 1 thread is utilized, KSC265@veryfast achieves 47.4% BDRate savings with only 8.0% speed up over X264@veryfast, and 32.1% BDRate savings with 81.3% speed up over X265@ultrafast
+When 1 thread is utilized, KSC265@veryfast achieves 47.4% BDRate savings with 8.0% speed up over X264@veryfast, and 32.1% BDRate savings with 81.3% speed up over X265@ultrafast
 
-When all threads(4) are utilized, KSC265@veryfast achieves 47.6% BDRate savings with only 6.3% speed decrease over X264@veryfast, and 33.5% BDRate savings with 61.8% speed up over X265@ultrafast
+When all threads(4) are utilized, KSC265@veryfast achieves 47.6% BDRate savings with 6.3% speed decrease over X264@veryfast, and 33.5% BDRate savings with 61.8% speed up over X265@ultrafast
 
 
 ##Offline Transcoding
 
-When 1 thread is utilized, KSC265@slow achieves 38.2% BDRate savings with only 2.0% speed up over X264@slow, and 9.8% BDRate savings with 184.4% speed up over X265@slow
+When 1 thread is utilized, KSC265@slow achieves 38.2% BDRate savings with 2.0% speed up over X264@slow, and 9.8% BDRate savings with 184.4% speed up over X265@slow
 
-When all threads(4) are utilized, KSC265@slow achieves 38.2% BDRate savings with only 2.0% speed up over X264@slow, and 8.5% BDRate savings with 197.8% speed up over X265@slow
+When all threads(4) are utilized, KSC265@slow achieves 38.2% BDRate savings with 2.0% speed up over X264@slow, and 8.5% BDRate savings with 197.8% speed up over X265@slow
 
 
 ##Highest Compression ratio
