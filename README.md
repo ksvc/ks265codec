@@ -104,9 +104,17 @@ which specifies the decoded yuv file name by a character string [output].
 which specifies the number of threads used for decoding process by a non-negative value [threadnum]. Default: [threadnum] = 0, when all available threads can be utilized.
 
 
-#Performance
+#Performance of decoder
 
-KSC265 is compared with X265 and QY265 on Win7@i5-4670 using following parameters:
+KSC265 decoder is compared with openHEVC in ffmpeg on ARM32@andriod, ARM64@andriod and ARM64@IOS.
+
+On average, results show that,
+
+KC265 decoder can achieve more than two times the speed of openHEVC in ffmpeg, and details can be found in the excels for decoding performance. 
+
+#Performance of encoder
+
+KSC265 encoder is compared with X265 and QY265 on Win7@i5-4670 using following parameters:
 
 Case for low latency:
 
