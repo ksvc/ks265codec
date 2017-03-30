@@ -1,6 +1,8 @@
-#ksc265codec
+#*KSC265codec*
 
-#ENCODER
+
+
+##ENCODER
 
 Usage: command line examples
 
@@ -9,8 +11,10 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency of
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
 
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 3 -crf 24 -iper 128 -b test.265
- 
-##Basic parameters:
+
+
+
+###Basic parameters:
 
 -preset [preset_value], 
 
@@ -52,7 +56,9 @@ which specifies the rate control type by the positive integer value [rctype] val
 which specifies the address of the output stream file in HEVC/H.265 format by a character string [stream_filename]. Default: no stream is output.
 
 
-##Optional parameters:
+
+
+###Optional parameters:
 
 -v or -V [version],
 
@@ -80,11 +86,15 @@ which specifies the number of threads used to encode the input video by a non-ne
 -bframes[value1], -vbv-maxrate [value2] , -vbv-bufsize[value3],
 which specifies similar meanings as similar values defined in x264
 
-#DECODER
+
+
+##DECODER
 
 AppDecoder_x64.exe -b test.265 -o test.yuv -threads 2
 
-##Basic parameters:
+
+
+###Basic parameters:
 
 -v or -V [version]
 
@@ -95,7 +105,9 @@ which specifies the decoder version and copyright.
 which specifies input bit-stream file by a character string [bitstream].
 
 
-##Optional parameters:
+
+
+###Optional parameters:
 
 -o [output],
 
@@ -106,7 +118,9 @@ which specifies the decoded yuv file name by a character string [output].
 which specifies the number of threads used for decoding process by a non-negative value [threadnum]. Default: [threadnum] = 0, when all available threads can be utilized.
 
 
-#Performance of decoder
+
+
+##Performance of decoder
 
 KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@andriod, ARM64@IOS and x86 platforms.
 
@@ -124,7 +138,9 @@ On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 tim
 | 1920x1080 @  full threads                | 51.13           | 90.44                | 939.25                     |
 | 1280x720 @  full threads                 | 120.20          | 187.16               | 1976.24                    |
 
-#Performance of encoder
+
+
+##Performance of encoder
 
 KSC265 encoder is compared with X265-v2.3 and X264 on Win7@i5-4670 using following parameters:
 
@@ -146,20 +162,25 @@ Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@
 The details are described as follows and in the excel document.
 
 
-##Real-Time Broadcasting
+
+
+###Real-Time Broadcasting
 
 When 1 thread is utilized, KSC265@veryfast achieves 45.1% BDRate savings with 7.1% speed up over X264@veryfast, and 34.3% BDRate savings with 95.0% speed up over X265@ultrafast
 
 When all threads(4) are utilized, KSC265@veryfast achieves 44.8% BDRate savings with 1.3% speed decrease over X264@veryfast, and 35.4% BDRate savings with 116.4% speed up over X265@ultrafast
 
+### 
 
-##Offline Transcoding
+
+###Offline Transcoding
 
 When 1 thread is utilized, KSC265@slow achieves 37.3% BDRate savings with 0.2% speed up over X264@slow, and 11.5% BDRate savings with 202.1% speed up over X265@slow
 
 When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.8% speed up over X264@slow, and 11.3% BDRate savings with 288.5% speed up over X265@slow
 
 
-##Highest Compression ratio
+
+###Highest Compression ratio
 
 When all threads(4) are utilized, KSC265@veryslow achieves 35.2% BDRate savings with 43.3% speed up over X264@placebo, and 10.0% BDRate savings with 108.4% speed up over X265@veryslow
