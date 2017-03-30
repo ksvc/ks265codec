@@ -1,4 +1,4 @@
-#ks265codec
+#ksc265codec
 
 #ENCODER
 
@@ -7,7 +7,9 @@ Usage: command line examples
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 1 -br 20000 -iper 128 -b test.265
 
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
- 
+
+AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 3 -crf 24 -iper 128 -b test.265
+
 ##Basic parameters:
 
 -preset [preset_value], 
@@ -106,56 +108,51 @@ which specifies the number of threads used for decoding process by a non-negativ
 
 #Performance of decoder
 
-KSC265 decoder is compared with openHEVC in ffmpeg on ARM32@andriod, ARM64@andriod and ARM64@IOS.
+KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@andriod, ARM64@IOS and x86 platforms.
 
-On average, results show that,
+| decoding  speed of ksc265inFFmpeg diving decoding speed of openHEVCInFFmpeg | ios（ipad mini2) | andriod(VIVOxplay5a) | X86( E5-2690 v3  @ 2.60GHz) |
+| ---------------------------------------- | --------------- | -------------------- | --------------------------- |
+| 1 thread                                 | 2.90            | 2.85                 | 2.11                        |
+| full threads                             | 2.69            | 2.99                 | 3.89                        |
 
-KC265 decoder can achieve more than two times the speed of openHEVC in ffmpeg, and details can be found in the excels for decoding performance. 
+On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 times the speed of openHEVC in ffmpeg on x86/ARM, and details can be found in the excels for decoding performance. 
 
 #Performance of encoder
 
-KSC265 encoder is compared with X265 and QY265 on Win7@i5-4670 using following parameters:
+KSC265 encoder is compared with X265-v2.3 and X264 on Win7@i5-4670 using following parameters:
 
-Case for low latency:
+x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset veryfast/slow/placebo --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
 
-x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset veryfast --fps [framerate] --profile high --aq-mode 0 --no-psy --tune zerolatency  --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
-
-AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset veryfast-tune default -latency  zerolatency -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
-
-x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset ultrafast --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq --rc-lookahead 0 --bframes 0  --psnr  --bitrate [btrNumber] --frame-threads 1/0 --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
-
-Case for larger latency:
-
-x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset veryfast/slow/placebo --fps [framerate] --profile high --aq-mode 0 --no-psy --tune offline  --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
-
-AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset veryfast/slow/veryslow -tune default -latency  offline -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
+AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset veryfast/slow/veryslow -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
 
 x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset ultrafast/slow/veryslow --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq  --psnr  --bitrate [btrNumber] --frame-threads 1/0 --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
 
-Then on test sequences of JCTVC CLASS-A ~ CLASS-E, compared to x264(20151215) and 265-v2.1 in the speed form of encoded frames per second (fps), the average performance of KS265 is shown as follows:
+Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@30fps, compared to x264(20151215) and 265-v2.1 in the speed form of encoded frames per second (fps), the average performance of KS265 can be summarized by the follows. 
 
+|                         |         KSC265 vs. X264 |       KSC265 vs. X264 |         KSC265 vs. X265 | KSC265 vs. X265      |
+| ----------------------- | ----------------------: | --------------------: | ----------------------: | :------------------- |
+| full-thread comparisons | Bit-saving@same quality | Speed-up@same quality | Bit-saving@same quality | peed-up@same bitrate |
+| Real-Time Applications  |                   44.8% |                 -1.3% |                   35.4% | 116.4%               |
+| Transcoding             |                   36.9% |                  3.8% |                   11.3% | 288.5%               |
+| Best Compression        |                   35.2% |                 43.3% |                   10.0% | 108.4%               |
 
-##Low-latency Streaming
-
-When 1 thread is utilized, KSC265@veryfast achieves 39.3% BDRate savings with only 13.5% speed decrease over X264@veryfast, and 30.8% BDRate savings with 132.7% speed up over X265@ultrafast
-
-When all threads(4) are utilized, KSC265@veryfast achieves 40.8% BDRate savings with only 11.2% speed decrease over X264@veryfast, and 31.7% BDRate savings with 61.1% speed up over X265@ultrafast
+The details are described as follows and in the excel document.
 
 
 ##Real-Time Broadcasting
 
-When 1 thread is utilized, KSC265@veryfast achieves 47.4% BDRate savings with 8.0% speed up over X264@veryfast, and 32.1% BDRate savings with 81.3% speed up over X265@ultrafast
+When 1 thread is utilized, KSC265@veryfast achieves 45.1% BDRate savings with 7.1% speed up over X264@veryfast, and 34.3% BDRate savings with 95.0% speed up over X265@ultrafast
 
-When all threads(4) are utilized, KSC265@veryfast achieves 47.6% BDRate savings with 6.3% speed decrease over X264@veryfast, and 33.5% BDRate savings with 61.8% speed up over X265@ultrafast
+When all threads(4) are utilized, KSC265@veryfast achieves 44.8% BDRate savings with 1.3% speed decrease over X264@veryfast, and 35.4% BDRate savings with 116.4% speed up over X265@ultrafast
 
 
 ##Offline Transcoding
 
-When 1 thread is utilized, KSC265@slow achieves 38.2% BDRate savings with 2.0% speed up over X264@slow, and 9.8% BDRate savings with 184.4% speed up over X265@slow
+When 1 thread is utilized, KSC265@slow achieves 37.3% BDRate savings with 0.2% speed up over X264@slow, and 11.5% BDRate savings with 202.1% speed up over X265@slow
 
-When all threads(4) are utilized, KSC265@slow achieves 38.2% BDRate savings with 2.0% speed up over X264@slow, and 8.5% BDRate savings with 197.8% speed up over X265@slow
+When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.8% speed up over X264@slow, and 11.3% BDRate savings with 288.5% speed up over X265@slow
 
 
 ##Highest Compression ratio
 
-When all threads(4) are utilized, KSC265@veryslow achieves 35.8% BDRate savings with 47.3% speed up over X264@placebo, and 6.4% BDRate savings with 53.7% speed up over X265@veryslow
+When all threads(4) are utilized, KSC265@veryslow achieves 35.2% BDRate savings with 43.3% speed up over X264@placebo, and 10.0% BDRate savings with 108.4% speed up over X265@veryslow
