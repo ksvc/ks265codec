@@ -9,7 +9,7 @@ AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency of
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
 
 AppEncoder_x64.exe -i pku_parkwalk_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 3 -crf 24 -iper 128 -b test.265
-
+ 
 ##Basic parameters:
 
 -preset [preset_value], 
@@ -115,7 +115,14 @@ KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@andriod, ARM64@IOS a
 | 1 thread                                 | 2.90            | 2.85                 | 2.11                        |
 | full threads                             | 2.69            | 2.99                 | 3.89                        |
 
-On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 times the speed of openHEVC in ffmpeg on x86/ARM, and details can be found in the excels for decoding performance. 
+On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 times the speed of openHEVC in ffmpeg on x86/ARM, and details can be found in the excels for decoding performance. Moreover, as following table shows, the decoding speed of KSC265 now can well support the 1080p@25fps applications.
+
+| decoding  speed of ksc265inFFmpeg (in frames per second) | ios（ipad mini2) | andriod(VIVOxplay5a) | PC( E5-2690 v3  @ 2.60GHz) |
+| ---------------------------------------- | --------------- | -------------------- | -------------------------- |
+| 1920x1080 @  1thread                     | 32.06           | 32.94                | 177.19                     |
+| 1280x720 @  1thread                      | 77.88           | 89.60                | 346.24                     |
+| 1920x1080 @  full threads                | 51.13           | 90.44                | 939.25                     |
+| 1280x720 @  full threads                 | 120.20          | 187.16               | 1976.24                    |
 
 #Performance of encoder
 
