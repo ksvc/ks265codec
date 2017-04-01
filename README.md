@@ -99,7 +99,7 @@ which specifies the number of threads used for decoding process by a non-negativ
 
 ## Performance of decoder
 
-KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@andriod, ARM64@IOS and x86 platforms.
+KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@Andriod, ARM64@iOS and x86 platforms.
 
 | decoding  speed <br> ( ksc265inFFmpeg / openHEVCInFFmpeg) | iOS<br>(ipad mini2) | Andriod<br>(VIVOxplay5a) | PC<br>(E5-2690 v3  @ 2.60GHz) |
 | ---------------------------------------- | --------------- | -------------------- | --------------------------- |
