@@ -11,7 +11,8 @@ AppEncoder_x64 -i p_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840
 ```
 
 
-### Basic parameters:<pre>
+### Basic parameters:
+
 -preset [preset_value], 
 
 which specifies the encoding speed by the character string [preset_value], among strings of "superfast", "veryfast", "fast", "medium", "slow", "veryslow" and "placebo".
@@ -50,7 +51,6 @@ which specifies the rate control type by the positive integer value [rctype] val
 -b [stream_filename], 
 
 which specifies the address of the output stream file in HEVC/H.265 format by a character string [stream_filename]. Default: no stream is output.
-</pre>
 
 ### Optional parameters:
 
