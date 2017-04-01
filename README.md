@@ -101,14 +101,14 @@ which specifies the number of threads used for decoding process by a non-negativ
 
 KSC265 decoder is compared with openHEVC in ffmpeg on ARM64@andriod, ARM64@IOS and x86 platforms.
 
-| decoding  speed of ksc265inFFmpeg diving decoding speed of openHEVCInFFmpeg | ios（ipad mini2) | andriod(VIVOxplay5a) | X86( E5-2690 v3  @ 2.60GHz) |
+| decoding  speed <br> ( ksc265inFFmpeg / openHEVCInFFmpeg) | iOS<br>(ipad mini2) | Andriod<br>(VIVOxplay5a) | PC<br>(E5-2690 v3  @ 2.60GHz) |
 | ---------------------------------------- | --------------- | -------------------- | --------------------------- |
 | 1 thread                                 | 2.90            | 2.85                 | 2.11                        |
 | full threads                             | 2.69            | 2.99                 | 3.89                        |
 
 On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 times the speed of openHEVC in ffmpeg on x86/ARM, and details can be found in the excels for decoding performance. Moreover, as following table shows, the decoding speed of KSC265 now can well support the 1080p@25fps applications.
 
-| decoding  speed of ksc265inFFmpeg (in frames per second) | ios（ipad mini2) | andriod(VIVOxplay5a) | PC( E5-2690 v3  @ 2.60GHz) |
+| decoding  speed of ksc265inFFmpeg <br> (in frames per second) | iOS<br>(ipad mini2) | Andriod<br>(VIVOxplay5a) | PC<br>(E5-2690 v3  @ 2.60GHz) |
 | ---------------------------------------- | --------------- | -------------------- | -------------------------- |
 | 1920x1080 @  1thread                     | 32.06           | 32.94                | 177.19                     |
 | 1280x720 @  1thread                      | 77.88           | 89.60                | 346.24                     |
@@ -120,12 +120,11 @@ On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 tim
 ## Performance of encoder
 
 KSC265 encoder is compared with X265-v2.3 and X264 on Win7@i5-4670 using following parameters:
-
+```
 x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset veryfast/slow/placebo --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
-
 AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset veryfast/slow/veryslow -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
-
 x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset ultrafast/slow/veryslow --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq  --psnr  --bitrate [btrNumber] --frame-threads 1/0 --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
+```
 
 Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@30fps, compared to x264(20151215) and 265-v2.1 in the speed form of encoded frames per second (fps), the average performance of KS265 can be summarized by the follows. 
 
@@ -138,22 +137,16 @@ Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@
 
 The details are described as follows and in the excel document.
 
-
-
-
 ### Real-Time Broadcasting
 
 When 1 thread is utilized, KSC265@veryfast achieves 45.1% BDRate savings with 7.1% speed up over X264@veryfast, and 34.3% BDRate savings with 95.0% speed up over X265@ultrafast
 
 When all threads(4) are utilized, KSC265@veryfast achieves 44.8% BDRate savings with 1.3% speed decrease over X264@veryfast, and 35.4% BDRate savings with 116.4% speed up over X265@ultrafast
 
-
 ### Offline Transcoding
 When 1 thread is utilized, KSC265@slow achieves 37.3% BDRate savings with 0.2% speed up over X264@slow, and 11.5% BDRate savings with 202.1% speed up over X265@slow
 
 When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.8% speed up over X264@slow, and 11.3% BDRate savings with 288.5% speed up over X265@slow
-
-
 
 ### Highest Compression ratio
 
