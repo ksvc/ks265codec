@@ -1,2 +1,2 @@
-CentOS release 6.5
-gcc 4.8.2-15
+CentOS release 6.7
+gcc 4.8.5-4
