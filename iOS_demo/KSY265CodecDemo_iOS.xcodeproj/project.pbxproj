@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055AEDF41E7BD4280006FE5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 055AEDF31E7BD4280006FE5D /* main.m */; };
+		055AEDF71E7BD4280006FE5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 055AEDF61E7BD4280006FE5D /* AppDelegate.m */; };
+		055AEDFA1E7BD4280006FE5D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055AEDF91E7BD4280006FE5D /* FirstViewController.m */; };
+		055AEDFD1E7BD4280006FE5D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055AEDFC1E7BD4280006FE5D /* SecondViewController.m */; };
+		055AEE001E7BD4280006FE5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055AEDFE1E7BD4280006FE5D /* Main.storyboard */; };
+		055AEE021E7BD4280006FE5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055AEE011E7BD4280006FE5D /* Assets.xcassets */; };
+		055AEE051E7BD4280006FE5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055AEE031E7BD4280006FE5D /* LaunchScreen.storyboard */; };
+		055AEE2D1E7BE7350006FE5D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055AEE2C1E7BE7350006FE5D /* BaseViewController.m */; };
+		058715AE1E836C3C008D8860 /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058715AD1E836C3C008D8860 /* libx264.a */; };
+		058715B11E836FE8008D8860 /* MovieEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 058715B01E836FE8008D8860 /* MovieEncoder.m */; };
+		058715B61E83BDB9008D8860 /* libqydecoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058715B31E83BDB9008D8860 /* libqydecoder.a */; };
+		058715B71E83BDB9008D8860 /* libqyencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058715B41E83BDB9008D8860 /* libqyencoder.a */; };
+		058715BA1E83BEED008D8860 /* KSYMovieEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 058715B91E83BEED008D8860 /* KSYMovieEncoder.m */; };
+		05C45C861E8E02C60045FE79 /* libqycommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C45C851E8E02C60045FE79 /* libqycommon.a */; };
+		05C45C8C1E8E06A10045FE79 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C45C8B1E8E06A10045FE79 /* libz.tbd */; };
+		05F746781E7E78820076E6EB /* SettingsDecoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F746751E7E78820076E6EB /* SettingsDecoderViewController.m */; };
+		05F746791E7E78820076E6EB /* SettingsEncoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F746771E7E78820076E6EB /* SettingsEncoderViewController.m */; };
+		05F7467C1E7E81E60076E6EB /* EncoderHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7467B1E7E81E60076E6EB /* EncoderHelperViewController.m */; };
+		05F7467F1E7E87D10076E6EB /* DecoderHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7467E1E7E87D10076E6EB /* DecoderHelperViewController.m */; };
+		05F746851E7FB53C0076E6EB /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F746841E7FB53C0076E6EB /* MoviesViewController.m */; };
+		05F7468B1E7FBDBA0076E6EB /* KSYMoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7468A1E7FBDBA0076E6EB /* KSYMoviePlayer.m */; };
+		05F7468E1E7FBDF70076E6EB /* MoviePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7468D1E7FBDF70076E6EB /* MoviePlayer.m */; };
+		05F746971E7FBE8A0076E6EB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746961E7FBE8A0076E6EB /* OpenGLES.framework */; };
+		05F746991E7FBECB0076E6EB /* liblenthevcdec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746981E7FBECB0076E6EB /* liblenthevcdec.a */; };
+		05F7469B1E7FBF230076E6EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F7469A1E7FBF230076E6EB /* QuartzCore.framework */; };
+		05F746A91E7FC1520076E6EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746A81E7FC1520076E6EB /* UIKit.framework */; };
+		05F746AB1E7FC15B0076E6EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746AA1E7FC15B0076E6EB /* Foundation.framework */; };
+		05F746AD1E7FC1680076E6EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746AC1E7FC1680076E6EB /* CoreGraphics.framework */; };
+		05F746BE1E7FCC890076E6EB /* GLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F746BB1E7FCC890076E6EB /* GLRenderer.m */; };
+		05F746BF1E7FCC890076E6EB /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F746BD1E7FCC890076E6EB /* GLView.m */; };
+		05F746C11E7FCDFE0076E6EB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F746C01E7FCDFE0076E6EB /* libc++.tbd */; };
+		F28F15871E88EB6600E1A739 /* 1280x720_15.yuv in Resources */ = {isa = PBXBuildFile; fileRef = F28F15851E88EB6600E1A739 /* 1280x720_15.yuv */; };
+		F28F15881E88EB6600E1A739 /* 640x480_15.yuv in Resources */ = {isa = PBXBuildFile; fileRef = F28F15861E88EB6600E1A739 /* 640x480_15.yuv */; };
+		F28F158A1E88EFF700E1A739 /* 960x540_15.yuv in Resources */ = {isa = PBXBuildFile; fileRef = F28F15891E88EFF700E1A739 /* 960x540_15.yuv */; };
+		F28F159E1E890F7B00E1A739 /* AYHCustomComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F28F159C1E890F7B00E1A739 /* AYHCustomComboBox.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		055AEE0C1E7BD4280006FE5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055AEDE71E7BD4280006FE5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055AEDEE1E7BD4280006FE5D;
+			remoteInfo = KSY265CodecDemo_iOS;
+		};
+		055AEE171E7BD4290006FE5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055AEDE71E7BD4280006FE5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 055AEDEE1E7BD4280006FE5D;
+			remoteInfo = KSY265CodecDemo_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		055AEDEF1E7BD4280006FE5D /* KSY265CodecDemo_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSY265CodecDemo_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		055AEDF31E7BD4280006FE5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		055AEDF51E7BD4280006FE5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		055AEDF61E7BD4280006FE5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		055AEDF81E7BD4280006FE5D /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		055AEDF91E7BD4280006FE5D /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		055AEDFB1E7BD4280006FE5D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		055AEDFC1E7BD4280006FE5D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		055AEDFF1E7BD4280006FE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		055AEE011E7BD4280006FE5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		055AEE041E7BD4280006FE5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		055AEE061E7BD4280006FE5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055AEE0B1E7BD4280006FE5D /* KSY265CodecDemo_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSY265CodecDemo_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		055AEE161E7BD4290006FE5D /* KSY265CodecDemo_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSY265CodecDemo_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		055AEE2B1E7BE7350006FE5D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		055AEE2C1E7BE7350006FE5D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		058715AD1E836C3C008D8860 /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libx264.a; path = x264/libx264.a; sourceTree = "<group>"; };
+		058715AF1E836FE8008D8860 /* MovieEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieEncoder.h; path = KSY265CodecDemo_iOS/MovieEncoder.h; sourceTree = "<group>"; };
+		058715B01E836FE8008D8860 /* MovieEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieEncoder.m; path = KSY265CodecDemo_iOS/MovieEncoder.m; sourceTree = "<group>"; };
+		058715B31E83BDB9008D8860 /* libqydecoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqydecoder.a; path = ksy265codec/libqydecoder.a; sourceTree = "<group>"; };
+		058715B41E83BDB9008D8860 /* libqyencoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqyencoder.a; path = ksy265codec/libqyencoder.a; sourceTree = "<group>"; };
+		058715B81E83BEED008D8860 /* KSYMovieEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSYMovieEncoder.h; path = KSY265CodecDemo_iOS/KSYMovieEncoder.h; sourceTree = "<group>"; };
+		058715B91E83BEED008D8860 /* KSYMovieEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSYMovieEncoder.m; path = KSY265CodecDemo_iOS/KSYMovieEncoder.m; sourceTree = "<group>"; };
+		05C45C851E8E02C60045FE79 /* libqycommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libqycommon.a; path = ksy265codec/libqycommon.a; sourceTree = "<group>"; };
+		05C45C8B1E8E06A10045FE79 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		05F746741E7E78820076E6EB /* SettingsDecoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDecoderViewController.h; sourceTree = "<group>"; };
+		05F746751E7E78820076E6EB /* SettingsDecoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDecoderViewController.m; sourceTree = "<group>"; };
+		05F746761E7E78820076E6EB /* SettingsEncoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsEncoderViewController.h; sourceTree = "<group>"; };
+		05F746771E7E78820076E6EB /* SettingsEncoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsEncoderViewController.m; sourceTree = "<group>"; };
+		05F7467A1E7E81E60076E6EB /* EncoderHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncoderHelperViewController.h; sourceTree = "<group>"; };
+		05F7467B1E7E81E60076E6EB /* EncoderHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncoderHelperViewController.m; sourceTree = "<group>"; };
+		05F7467D1E7E87D10076E6EB /* DecoderHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoderHelperViewController.h; sourceTree = "<group>"; };
+		05F7467E1E7E87D10076E6EB /* DecoderHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoderHelperViewController.m; sourceTree = "<group>"; };
+		05F746831E7FB53C0076E6EB /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		05F746841E7FB53C0076E6EB /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		05F746891E7FBDBA0076E6EB /* KSYMoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSYMoviePlayer.h; path = KSY265CodecDemo_iOS/KSYMoviePlayer.h; sourceTree = "<group>"; };
+		05F7468A1E7FBDBA0076E6EB /* KSYMoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSYMoviePlayer.m; path = KSY265CodecDemo_iOS/KSYMoviePlayer.m; sourceTree = "<group>"; };
+		05F7468C1E7FBDF70076E6EB /* MoviePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoviePlayer.h; path = KSY265CodecDemo_iOS/MoviePlayer.h; sourceTree = "<group>"; };
+		05F7468D1E7FBDF70076E6EB /* MoviePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoviePlayer.m; path = KSY265CodecDemo_iOS/MoviePlayer.m; sourceTree = "<group>"; };
+		05F746961E7FBE8A0076E6EB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		05F746981E7FBECB0076E6EB /* liblenthevcdec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblenthevcdec.a; path = lenthevcdec/liblenthevcdec.a; sourceTree = "<group>"; };
+		05F7469A1E7FBF230076E6EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		05F746A81E7FC1520076E6EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		05F746AA1E7FC15B0076E6EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		05F746AC1E7FC1680076E6EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		05F746BA1E7FCC890076E6EB /* GLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLRenderer.h; path = KSY265CodecDemo_iOS/GLRenderer.h; sourceTree = "<group>"; };
+		05F746BB1E7FCC890076E6EB /* GLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLRenderer.m; path = KSY265CodecDemo_iOS/GLRenderer.m; sourceTree = "<group>"; };
+		05F746BC1E7FCC890076E6EB /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLView.h; path = KSY265CodecDemo_iOS/GLView.h; sourceTree = "<group>"; };
+		05F746BD1E7FCC890076E6EB /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GLView.m; path = KSY265CodecDemo_iOS/GLView.m; sourceTree = "<group>"; };
+		05F746C01E7FCDFE0076E6EB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F28F15851E88EB6600E1A739 /* 1280x720_15.yuv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1280x720_15.yuv; sourceTree = "<group>"; };
+		F28F15861E88EB6600E1A739 /* 640x480_15.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 640x480_15.yuv; sourceTree = "<group>"; };
+		F28F15891E88EFF700E1A739 /* 960x540_15.yuv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 960x540_15.yuv; sourceTree = "<group>"; };
+		F28F159B1E890F7B00E1A739 /* AYHCustomComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYHCustomComboBox.h; sourceTree = "<group>"; };
+		F28F159C1E890F7B00E1A739 /* AYHCustomComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYHCustomComboBox.m; sourceTree = "<group>"; };
+		F28F159D1E890F7B00E1A739 /* AYHCustomComboBoxDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYHCustomComboBoxDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055AEDEC1E7BD4280006FE5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C45C8C1E8E06A10045FE79 /* libz.tbd in Frameworks */,
+				05F746C11E7FCDFE0076E6EB /* libc++.tbd in Frameworks */,
+				05F746AD1E7FC1680076E6EB /* CoreGraphics.framework in Frameworks */,
+				05F746AB1E7FC15B0076E6EB /* Foundation.framework in Frameworks */,
+				05F746A91E7FC1520076E6EB /* UIKit.framework in Frameworks */,
+				05F7469B1E7FBF230076E6EB /* QuartzCore.framework in Frameworks */,
+				05F746971E7FBE8A0076E6EB /* OpenGLES.framework in Frameworks */,
+				058715B61E83BDB9008D8860 /* libqydecoder.a in Frameworks */,
+				058715B71E83BDB9008D8860 /* libqyencoder.a in Frameworks */,
+				05C45C861E8E02C60045FE79 /* libqycommon.a in Frameworks */,
+				05F746991E7FBECB0076E6EB /* liblenthevcdec.a in Frameworks */,
+				058715AE1E836C3C008D8860 /* libx264.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE081E7BD4280006FE5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE131E7BD4290006FE5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		055AEDE61E7BD4280006FE5D = {
+			isa = PBXGroup;
+			children = (
+				05F746A11E7FC1000076E6EB /* Prebuilt */,
+				058715AA1E82B0DA008D8860 /* KSY265Encoder */,
+				05F7469C1E7FC0320076E6EB /* KSY265Decoder */,
+				055AEDF11E7BD4280006FE5D /* KSY265CodecDemo_iOS */,
+				F28F159A1E890F7B00E1A739 /* combox */,
+				F28F15841E88EB6600E1A739 /* resource */,
+				055AEDF01E7BD4280006FE5D /* Products */,
+				05F746951E7FBE890076E6EB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		055AEDF01E7BD4280006FE5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				055AEDEF1E7BD4280006FE5D /* KSY265CodecDemo_iOS.app */,
+				055AEE0B1E7BD4280006FE5D /* KSY265CodecDemo_iOSTests.xctest */,
+				055AEE161E7BD4290006FE5D /* KSY265CodecDemo_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		055AEDF11E7BD4280006FE5D /* KSY265CodecDemo_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				055AEDF51E7BD4280006FE5D /* AppDelegate.h */,
+				055AEDF61E7BD4280006FE5D /* AppDelegate.m */,
+				055AEDF81E7BD4280006FE5D /* FirstViewController.h */,
+				055AEDF91E7BD4280006FE5D /* FirstViewController.m */,
+				055AEDFB1E7BD4280006FE5D /* SecondViewController.h */,
+				055AEDFC1E7BD4280006FE5D /* SecondViewController.m */,
+				055AEE2B1E7BE7350006FE5D /* BaseViewController.h */,
+				055AEE2C1E7BE7350006FE5D /* BaseViewController.m */,
+				05F746741E7E78820076E6EB /* SettingsDecoderViewController.h */,
+				05F746751E7E78820076E6EB /* SettingsDecoderViewController.m */,
+				05F746761E7E78820076E6EB /* SettingsEncoderViewController.h */,
+				05F746771E7E78820076E6EB /* SettingsEncoderViewController.m */,
+				05F7467A1E7E81E60076E6EB /* EncoderHelperViewController.h */,
+				05F7467B1E7E81E60076E6EB /* EncoderHelperViewController.m */,
+				05F7467D1E7E87D10076E6EB /* DecoderHelperViewController.h */,
+				05F7467E1E7E87D10076E6EB /* DecoderHelperViewController.m */,
+				05F746831E7FB53C0076E6EB /* MoviesViewController.h */,
+				05F746841E7FB53C0076E6EB /* MoviesViewController.m */,
+				055AEDFE1E7BD4280006FE5D /* Main.storyboard */,
+				055AEE011E7BD4280006FE5D /* Assets.xcassets */,
+				055AEE031E7BD4280006FE5D /* LaunchScreen.storyboard */,
+				055AEE061E7BD4280006FE5D /* Info.plist */,
+				055AEDF21E7BD4280006FE5D /* Supporting Files */,
+			);
+			path = KSY265CodecDemo_iOS;
+			sourceTree = "<group>";
+		};
+		055AEDF21E7BD4280006FE5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				055AEDF31E7BD4280006FE5D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		058715AA1E82B0DA008D8860 /* KSY265Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				058715AF1E836FE8008D8860 /* MovieEncoder.h */,
+				058715B01E836FE8008D8860 /* MovieEncoder.m */,
+				058715B81E83BEED008D8860 /* KSYMovieEncoder.h */,
+				058715B91E83BEED008D8860 /* KSYMovieEncoder.m */,
+			);
+			name = KSY265Encoder;
+			sourceTree = "<group>";
+		};
+		05F746951E7FBE890076E6EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05C45C8B1E8E06A10045FE79 /* libz.tbd */,
+				05C45C851E8E02C60045FE79 /* libqycommon.a */,
+				058715B31E83BDB9008D8860 /* libqydecoder.a */,
+				058715B41E83BDB9008D8860 /* libqyencoder.a */,
+				058715AD1E836C3C008D8860 /* libx264.a */,
+				05F746C01E7FCDFE0076E6EB /* libc++.tbd */,
+				05F7469A1E7FBF230076E6EB /* QuartzCore.framework */,
+				05F746961E7FBE8A0076E6EB /* OpenGLES.framework */,
+				05F746A81E7FC1520076E6EB /* UIKit.framework */,
+				05F746AA1E7FC15B0076E6EB /* Foundation.framework */,
+				05F746AC1E7FC1680076E6EB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05F7469C1E7FC0320076E6EB /* KSY265Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				05F746891E7FBDBA0076E6EB /* KSYMoviePlayer.h */,
+				05F7468A1E7FBDBA0076E6EB /* KSYMoviePlayer.m */,
+				05F7468C1E7FBDF70076E6EB /* MoviePlayer.h */,
+				05F7468D1E7FBDF70076E6EB /* MoviePlayer.m */,
+				05F746BA1E7FCC890076E6EB /* GLRenderer.h */,
+				05F746BB1E7FCC890076E6EB /* GLRenderer.m */,
+				05F746BC1E7FCC890076E6EB /* GLView.h */,
+				05F746BD1E7FCC890076E6EB /* GLView.m */,
+			);
+			name = KSY265Decoder;
+			sourceTree = "<group>";
+		};
+		05F746A11E7FC1000076E6EB /* Prebuilt */ = {
+			isa = PBXGroup;
+			children = (
+				05F746981E7FBECB0076E6EB /* liblenthevcdec.a */,
+			);
+			name = Prebuilt;
+			sourceTree = "<group>";
+		};
+		F28F15841E88EB6600E1A739 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				F28F15891E88EFF700E1A739 /* 960x540_15.yuv */,
+				F28F15851E88EB6600E1A739 /* 1280x720_15.yuv */,
+				F28F15861E88EB6600E1A739 /* 640x480_15.yuv */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		F28F159A1E890F7B00E1A739 /* combox */ = {
+			isa = PBXGroup;
+			children = (
+				F28F159B1E890F7B00E1A739 /* AYHCustomComboBox.h */,
+				F28F159C1E890F7B00E1A739 /* AYHCustomComboBox.m */,
+				F28F159D1E890F7B00E1A739 /* AYHCustomComboBoxDelegate.h */,
+			);
+			path = combox;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		055AEDEE1E7BD4280006FE5D /* KSY265CodecDemo_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055AEE1F1E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOS" */;
+			buildPhases = (
+				055AEDEB1E7BD4280006FE5D /* Sources */,
+				055AEDEC1E7BD4280006FE5D /* Frameworks */,
+				055AEDED1E7BD4280006FE5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KSY265CodecDemo_iOS;
+			productName = KSY265CodecDemo_iOS;
+			productReference = 055AEDEF1E7BD4280006FE5D /* KSY265CodecDemo_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		055AEE0A1E7BD4280006FE5D /* KSY265CodecDemo_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055AEE221E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOSTests" */;
+			buildPhases = (
+				055AEE071E7BD4280006FE5D /* Sources */,
+				055AEE081E7BD4280006FE5D /* Frameworks */,
+				055AEE091E7BD4280006FE5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055AEE0D1E7BD4280006FE5D /* PBXTargetDependency */,
+			);
+			name = KSY265CodecDemo_iOSTests;
+			productName = KSY265CodecDemo_iOSTests;
+			productReference = 055AEE0B1E7BD4280006FE5D /* KSY265CodecDemo_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		055AEE151E7BD4290006FE5D /* KSY265CodecDemo_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055AEE251E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOSUITests" */;
+			buildPhases = (
+				055AEE121E7BD4290006FE5D /* Sources */,
+				055AEE131E7BD4290006FE5D /* Frameworks */,
+				055AEE141E7BD4290006FE5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				055AEE181E7BD4290006FE5D /* PBXTargetDependency */,
+			);
+			name = KSY265CodecDemo_iOSUITests;
+			productName = KSY265CodecDemo_iOSUITests;
+			productReference = 055AEE161E7BD4290006FE5D /* KSY265CodecDemo_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		055AEDE71E7BD4280006FE5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "江东";
+				TargetAttributes = {
+					055AEDEE1E7BD4280006FE5D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+					};
+					055AEE0A1E7BD4280006FE5D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 055AEDEE1E7BD4280006FE5D;
+					};
+					055AEE151E7BD4290006FE5D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 055AEDEE1E7BD4280006FE5D;
+					};
+				};
+			};
+			buildConfigurationList = 055AEDEA1E7BD4280006FE5D /* Build configuration list for PBXProject "KSY265CodecDemo_iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 055AEDE61E7BD4280006FE5D;
+			productRefGroup = 055AEDF01E7BD4280006FE5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				055AEDEE1E7BD4280006FE5D /* KSY265CodecDemo_iOS */,
+				055AEE0A1E7BD4280006FE5D /* KSY265CodecDemo_iOSTests */,
+				055AEE151E7BD4290006FE5D /* KSY265CodecDemo_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		055AEDED1E7BD4280006FE5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055AEE051E7BD4280006FE5D /* LaunchScreen.storyboard in Resources */,
+				055AEE021E7BD4280006FE5D /* Assets.xcassets in Resources */,
+				F28F15881E88EB6600E1A739 /* 640x480_15.yuv in Resources */,
+				F28F158A1E88EFF700E1A739 /* 960x540_15.yuv in Resources */,
+				F28F15871E88EB6600E1A739 /* 1280x720_15.yuv in Resources */,
+				055AEE001E7BD4280006FE5D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE091E7BD4280006FE5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE141E7BD4290006FE5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		055AEDEB1E7BD4280006FE5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F746BF1E7FCC890076E6EB /* GLView.m in Sources */,
+				05F746BE1E7FCC890076E6EB /* GLRenderer.m in Sources */,
+				055AEDFD1E7BD4280006FE5D /* SecondViewController.m in Sources */,
+				058715BA1E83BEED008D8860 /* KSYMovieEncoder.m in Sources */,
+				055AEE2D1E7BE7350006FE5D /* BaseViewController.m in Sources */,
+				F28F159E1E890F7B00E1A739 /* AYHCustomComboBox.m in Sources */,
+				05F746851E7FB53C0076E6EB /* MoviesViewController.m in Sources */,
+				05F746791E7E78820076E6EB /* SettingsEncoderViewController.m in Sources */,
+				055AEDF71E7BD4280006FE5D /* AppDelegate.m in Sources */,
+				058715B11E836FE8008D8860 /* MovieEncoder.m in Sources */,
+				05F7467F1E7E87D10076E6EB /* DecoderHelperViewController.m in Sources */,
+				055AEDFA1E7BD4280006FE5D /* FirstViewController.m in Sources */,
+				05F746781E7E78820076E6EB /* SettingsDecoderViewController.m in Sources */,
+				055AEDF41E7BD4280006FE5D /* main.m in Sources */,
+				05F7467C1E7E81E60076E6EB /* EncoderHelperViewController.m in Sources */,
+				05F7468E1E7FBDF70076E6EB /* MoviePlayer.m in Sources */,
+				05F7468B1E7FBDBA0076E6EB /* KSYMoviePlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE071E7BD4280006FE5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		055AEE121E7BD4290006FE5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		055AEE0D1E7BD4280006FE5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055AEDEE1E7BD4280006FE5D /* KSY265CodecDemo_iOS */;
+			targetProxy = 055AEE0C1E7BD4280006FE5D /* PBXContainerItemProxy */;
+		};
+		055AEE181E7BD4290006FE5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 055AEDEE1E7BD4280006FE5D /* KSY265CodecDemo_iOS */;
+			targetProxy = 055AEE171E7BD4290006FE5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		055AEDFE1E7BD4280006FE5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				055AEDFF1E7BD4280006FE5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		055AEE031E7BD4280006FE5D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				055AEE041E7BD4280006FE5D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		055AEE1D1E7BD4290006FE5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					KSY265CodecDemo_iOS/GLRenderView,
+					lenthevcdec,
+					ksy265dec,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		055AEE1E1E7BD4290006FE5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					KSY265CodecDemo_iOS/GLRenderView,
+					lenthevcdec,
+					ksy265dec,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		055AEE201E7BD4290006FE5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					KSY265CodecDemo_iOS/GLRenderView,
+					lenthevcdec,
+					ksy265codec,
+					x264,
+				);
+				INFOPLIST_FILE = KSY265CodecDemo_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lenthevcdec",
+					"$(PROJECT_DIR)/ksy265dec",
+					"$(PROJECT_DIR)/x264",
+					"$(PROJECT_DIR)/ksy265codec",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		055AEE211E7BD4290006FE5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					KSY265CodecDemo_iOS/GLRenderView,
+					lenthevcdec,
+					ksy265codec,
+					x264,
+				);
+				INFOPLIST_FILE = KSY265CodecDemo_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lenthevcdec",
+					"$(PROJECT_DIR)/ksy265dec",
+					"$(PROJECT_DIR)/x264",
+					"$(PROJECT_DIR)/ksy265codec",
+					"$(PROJECT_DIR)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		055AEE231E7BD4290006FE5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSY265CodecDemo_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KSY265CodecDemo_iOS.app/KSY265CodecDemo_iOS";
+			};
+			name = Debug;
+		};
+		055AEE241E7BD4290006FE5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSY265CodecDemo_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KSY265CodecDemo_iOS.app/KSY265CodecDemo_iOS";
+			};
+			name = Release;
+		};
+		055AEE261E7BD4290006FE5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSY265CodecDemo_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KSY265CodecDemo_iOS;
+			};
+			name = Debug;
+		};
+		055AEE271E7BD4290006FE5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				INFOPLIST_FILE = KSY265CodecDemo_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KSY265CodecDemo_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		055AEDEA1E7BD4280006FE5D /* Build configuration list for PBXProject "KSY265CodecDemo_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055AEE1D1E7BD4290006FE5D /* Debug */,
+				055AEE1E1E7BD4290006FE5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055AEE1F1E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055AEE201E7BD4290006FE5D /* Debug */,
+				055AEE211E7BD4290006FE5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055AEE221E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055AEE231E7BD4290006FE5D /* Debug */,
+				055AEE241E7BD4290006FE5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055AEE251E7BD4290006FE5D /* Build configuration list for PBXNativeTarget "KSY265CodecDemo_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055AEE261E7BD4290006FE5D /* Debug */,
+				055AEE271E7BD4290006FE5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 055AEDE71E7BD4280006FE5D /* Project object */;
+}
