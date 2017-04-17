@@ -12,11 +12,12 @@ enum
     QY_POINTER = (0x80000003),     //  Invalid pointer
     QY_NOTSUPPORTED = (0x80000004),//  NOT support feature encoutnered
     QY_AUTH_INVALID = (0x80000005), //  authentication invalid
-    QY_REF_PIC_NOT_FOUND = (0x80000007), // encode complete
+    QY_SEARCHING_ACCESS_POINT = (0x00000001), // in process of searching first access point
+    QY_REF_PIC_NOT_FOUND = (0x00000007), // reference picture not found, can be ignored
 #if defined(EMSCRIPTEN)||defined(_TEST_FOR_EMSCRIPTEN)
     QY_NEED_MORE_DATA = (0x00000008), //need push more data
 #endif
-    QY_BITSTREAM_ERROR = (0x80000009), // encode complete
+    QY_BITSTREAM_ERROR = (0x00000009), // detecting bitstream error, can be ignored
 };
 
 enum NAL_UNIT_TYPE{
