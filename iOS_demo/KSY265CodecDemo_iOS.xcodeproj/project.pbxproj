@@ -623,7 +623,7 @@
 					"$(PROJECT_DIR)/ksy265codec",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ksyun.ios.KSY265CodecDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -652,7 +652,7 @@
 					"$(PROJECT_DIR)/ksy265codec",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ksy.KSY265CodecDemo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ksyun.ios.KSY265CodecDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
