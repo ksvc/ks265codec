@@ -137,7 +137,7 @@ KSC265 encoder is compared with X265-v2.3,  X264 and vp9 on Win7@i5-4670 using f
 x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset [veryfast|slow|placebo] --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
 AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset [veryfast|slow|veryslow] -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
 x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset [ultrafast|slow|veryslow] --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq  --psnr  --bitrate [btrNumber] --frame-threads [1|0] --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
-vpxenc.exe --codec=vp9 --passes=1 --[rt|best] --fps=[framerate]/1 --i420 --end-usage=cbr --target-bitrate=[btrNumber] --kf-max-dist=[framerate * 10] --cpu-used=8 --threads=[1|4] --psnr -w 416 -h 240 -o out.vp9 BQSquare_416x240_60.yuv
+vpxenc.exe --codec=vp9 --passes=1 --[rt|goog|best] --fps=[framerate]/1 --i420 --end-usage=cbr --target-bitrate=[btrNumber] --kf-max-dist=[framerate * 10] --cpu-used=8 --threads=[1|4] --psnr -w 416 -h 240 -o out.vp9 BQSquare_416x240_60.yuv
 ```
 
 Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@30fps, compared to x264(20151215), 265-v2.3 and vp9 in the speed form of encoded frames per second (fps), the average performance of KS265 can be summarized by the follows. 
@@ -146,7 +146,7 @@ Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@
 | ------------------------ | ----------------------- | ---------------------- | ----------------------- | ---------------------- | ----------------------- | --------------------- |
 | full-thread  comparisons | Bitsaving @same quality | Speedup @same  quality | Bitsaving @same quality | Speedup @same  bitrate | Bitsaving @same quality | Speedup @same bitrate |
 | Real-Time  Apps          | 44.60%                  | 0.20%                  | 35.10%                  | 119.80%                | 43.50%                  | 69.50%                |
-| Transcode                | 36.90%                  | 3.40%                  | 11.40%                  | 287.20%                | 21.10%                  | 7151.90%              |
+| Transcode                | 36.90%                  | 3.40%                  | 11.40%                  | 287.20%                | 38.0%                   | 194.2%                |
 | Best  Compress           | 35.30%                  | 44.60%                 | 10.10%                  | 110.40%                | 29.40%                  | 669.50%               |
 
 The details are described as follows and in the excel document.
@@ -158,9 +158,9 @@ When 1 thread is utilized, KSC265@veryfast achieves 45.0% BDRate savings with 7.
 When all threads(4) are utilized, KSC265@veryfast achieves 44.6% BDRate savings with 0.2% speed up over X264@veryfast, 35.1% BDRate savings with 119.8% speed up over X265@ultrafast, and 43.5% BDRate savings with 69.5% speed up over vp9@lt.
 
 ### Offline Transcoding
-When 1 thread is utilized, KSC265@slow achieves 37.4% BDRate savings with 0.5% speed decrease over X264@slow, 11.8% BDRate savings with 201.2% speed up over X265@slow, and 23.6% BDRate savings with 5070.0% speed up over vp9@best.
+When 1 thread is utilized, KSC265@slow achieves 37.4% BDRate savings with 0.5% speed decrease over X264@slow, 11.8% BDRate savings with 201.2% speed up over X265@slow, and 40.1% BDRate savings with 94.8% speed up over vp9@good.
 
-When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.4% speed up over X264@slow, 11.4% BDRate savings with 287.2% speed up over X265@slow, and 21.1% BDRate savings with 7151.9% speed up over vp9@best.
+When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.4% speed up over X264@slow, 11.4% BDRate savings with 287.2% speed up over X265@slow, and 38.0% BDRate savings with 194.2% speed up over vp9@good.
 
 ### Highest Compression ratio
 
