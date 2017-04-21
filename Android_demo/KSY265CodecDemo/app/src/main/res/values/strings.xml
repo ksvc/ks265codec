@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KSY265CodecDemo</string>
+    <string name="settings">设置</string>
+    <string name="help">帮助</string>
+    <string name="navigate">浏览文件</string>
+    <string name="start">确认</string>
+    <string name="encode_help_info">编码器使用说明： 先设置编码器参数，然后选择文件，最好确定即开始编码</string>
+    <string name="decode_help_info">解码器使用说明： 先设置解码器参数(其中选择渲染帧率为-1(off)时，是关闭渲染功能)，然后选择文件，最好确定即开始解码</string>
+
+    <!--a file choose-->
+    <string name="empty_directory">Empty Directory</string>
+    <string name="storage_removed">Storage was removed or unmounted.</string>
+    <string name="choose_file">Select a file</string>
+    <string name="error_selecting_file">Error selecting File</string>
+    <string name="internal_storage">Internal storage</string>
+
+    <string name="chooser_title">KSY Yun</string>
+</resources>

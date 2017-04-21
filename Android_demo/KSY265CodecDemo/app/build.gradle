@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.ksyun.media.ksy265codec.demo"
+        minSdkVersion 9
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0.0"
+        externalNativeBuild {
+            ndkBuild {
+                //abiFilters 'x86', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            jniDebuggable true
+        }
+    }
+
+    sourceSets{
+        main{
+            jniLibs.srcDirs 'src/main/libs'
+            jni.srcDirs = []
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path "src/main/jni/Android.mk"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:percent:25.3.0'
+}

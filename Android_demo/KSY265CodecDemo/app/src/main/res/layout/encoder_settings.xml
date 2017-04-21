@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="horizontal"
+        android:paddingBottom="20px"
+        android:paddingTop="20px">
+
+        <TextView
+            android:id="@+id/encoder_settings_encoder_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:text="编码器" />
+
+        <Spinner
+            android:id="@+id/encoder_settings_encoder_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px">
+        <TextView
+            android:id="@+id/encoder_settings_profile_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="编码档次"/>
+        <Spinner
+            android:id="@+id/encoder_settings_profile_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px" >
+        <TextView
+            android:id="@+id/encoder_settings_delay_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="延时" />
+        <Spinner
+            android:id="@+id/encoder_settings_delay_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px">
+        <TextView
+            android:id="@+id/encoder_settings_resolution_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="分辨率" />
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Spinner
+                android:id="@+id/encoder_settings_resolution_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"/>
+            <EditText
+                android:id="@+id/encoder_settings_resolution"
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:hint="宽*高"
+                android:text="1280*720"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px">
+        <TextView
+            android:id="@+id/encoder_settings_bitrate_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:hint="0代表关闭"
+            android:text="码率(kbps)" />
+        <EditText
+            android:id="@+id/encoder_settings_bitrate"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="500"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px">
+        <TextView
+            android:id="@+id/encoder_settings_fps_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="帧率" />
+        <EditText
+            android:id="@+id/encoder_settings_fps"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="15"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:layout_gravity="bottom">
+        <TextView
+            android:id="@+id/encoder_settings_threads_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="编码线程" />
+        <EditText
+            android:id="@+id/encoder_settings_threads"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/encoder_settings_sure"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定" />
+</LinearLayout>
