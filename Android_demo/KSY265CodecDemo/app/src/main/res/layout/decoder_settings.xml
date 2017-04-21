@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:layout_gravity="top">
+        <TextView
+            android:id="@+id/decoder_settings_decoder_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="解码器"/>
+        <Spinner
+            android:id="@+id/decoder_settings_decoder_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:layout_gravity="top">
+        <TextView
+            android:id="@+id/decoder_settings_threads_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="解码线程数"/>
+        <Spinner
+            android:id="@+id/decoder_settings_threads_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:layout_gravity="top">
+        <TextView
+            android:id="@+id/decoder_settings_fps_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="渲染帧率"/>
+        <Spinner
+            android:id="@+id/decoder_settings_fps_spinner"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:layout_gravity="top">
+        <TextView
+            android:id="@+id/decoder_settings_enable_yuv_output_txt"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="输出YUV"/>
+        <RadioGroup
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10px"
+            android:orientation="horizontal" >
+            <RadioButton
+                android:id="@+id/decoder_settings_enable_yuv_output"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是"
+                android:layout_weight="1"/>
+            <RadioButton
+                android:id="@+id/decoder_settings_disable_yuv_output"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="否"
+                android:layout_weight="1"/>
+        </RadioGroup>>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/decoder_settings_sure"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定" />
+
+</LinearLayout>

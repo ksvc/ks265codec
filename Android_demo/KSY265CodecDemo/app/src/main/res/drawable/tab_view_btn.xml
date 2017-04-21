@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 指定选择时和未被选择的图片 -->
+    <item android:drawable="@drawable/view_selected"
+        android:state_selected="true"/>
+    <item android:drawable="@drawable/view" />
+</selector>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_layout">
+
+    <RelativeLayout
+        android:id="@+id/main_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="20px">
+
+        <Button
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="10px"
+            android:text="@string/settings"
+            android:textColor="#0000FF"/>
+
+        <TextView
+            android:id="@+id/title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10px"
+            android:text="@string/help"
+            android:textColor="#0000FF"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20px"
+        android:paddingBottom="20px"
+        android:text="@string/navigate"
+        android:textColor="#0000FF"
+        android:layout_below="@id/main_top"/>
+
+    <LinearLayout
+        android:id="@+id/path"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nav">
+
+        <EditText
+            android:id="@+id/filepath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"
+            android:textColor="#0000FF"/>
+    </LinearLayout>
+
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        app:layout_heightPercent="40%"
+        app:layout_widthPercent="100%"
+        android:layout_gravity="center"
+        android:paddingTop="20px"
+        android:layout_below="@id/path"/>
+
+    <TextView
+        android:id="@+id/info_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20px"
+        android:layout_gravity="bottom"
+        android:scrollbars="vertical"
+        android:layout_below="@id/surface_view"/>
+</android.support.percent.PercentRelativeLayout>
