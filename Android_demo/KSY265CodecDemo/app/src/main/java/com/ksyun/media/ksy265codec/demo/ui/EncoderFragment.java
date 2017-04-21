@@ -90,7 +90,7 @@ public class EncoderFragment extends BaseFragment implements EncoderSettingsFrag
             //update your listView adapter here
             //Dismiss your dialog
             toggleView(true);
-            mProgressDialog.dismiss();
+            mProgressDialog.dismissAllowingStateLoss();
             updateInfo(mEncoder);
         }
 
