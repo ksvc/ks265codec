@@ -1,6 +1,7 @@
 package com.ksyun.media.ksy265codec.demo.ui;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.ksyun.media.ksy265codec.demo.decoder.hevdecoder.NativeMediaPlayer;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.util.regex.Pattern;
 
 /**
  * Created by sujia on 2017/3/27.
@@ -69,6 +74,38 @@ public class DecoderFragment extends BaseFragment implements DecoderSettingsFrag
         }
     }
 
+    /**
+     * Gets the number of cores available in this device, across all processors.
+     * Requires: Ability to peruse the filesystem at "/sys/devices/system/cpu"
+     *
+     * @return The number of cores, or 1 if failed to get result
+     */
+    private int getNumCores() {
+        // Private Class to display only CPU devices in the directory listing
+        class CpuFilter implements FileFilter {
+            @Override
+            public boolean accept(File pathname) {
+                // Check if filename is "cpu", followed by a single digit number
+                if (Pattern.matches("cpu[0-9]+", pathname.getName())) {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        try {
+            // Get directory containing CPU info
+            File dir = new File("/sys/devices/system/cpu/");
+            // Filter to only list the devices we care about
+            File[] files = dir.listFiles(new CpuFilter());
+            // Return the number of cores (virtual CPU devices)
+            return files.length;
+        } catch (Exception e) {
+            // Default to return 1 core
+            return 1;
+        }
+    }
+
     @Override
     protected void onStartClicked() {
         if (mSettings == null) {
@@ -96,18 +133,16 @@ public class DecoderFragment extends BaseFragment implements DecoderSettingsFrag
         mPlayer.setDisplay(mSurfaceView.getHolder());
         mPlayer.setDisplaySize(mWidth, mHeight);
 
-        // android maintains the preferences for us, so use directly
         int num = mSettings.getThreads();
-        if ( 0 == num ) {
-            int cores = Runtime.getRuntime().availableProcessors();
-            if ( cores <= 1 )
+        if (0 == num) {
+            int cores = getNumCores();// Runtime.getRuntime().availableProcessors();
+            if (cores <= 1)
                 num = 1;
-            else
-                num = (cores < 4) ? (cores * 2) : 8;
-            //Log.d(TAG, cores + " cores detected! use " + num + " threads.\n");
-            Toast.makeText(getContext(),
-                    "检测到手机为" + cores + "核! 使用 " + num + "个线程.\n",
-                    Toast.LENGTH_SHORT).show();
+            else if(mSettings.decoderIndex == 1) { // lenthevcdec
+                num = (cores < 5) ? ((cores * 3 + 1) / 2) : 8;
+            }
+            Log.d(TAG, cores + " cores detected! use " + num
+                    + " threads.\n");
         }
 
         //0: ksc265
