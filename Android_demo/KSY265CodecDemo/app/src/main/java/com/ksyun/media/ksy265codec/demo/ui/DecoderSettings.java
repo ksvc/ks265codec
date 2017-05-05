@@ -15,7 +15,7 @@ public class DecoderSettings {
 
     public final static String[] Decoders = new String[] {"KSC265", "lenthevcdec"};
     public final static String[] Threads = new String[] {"0 (auto)", "1", "2",
-            "3", "4"};
+            "3", "4", "5", "6", "7", "8","9", "10"};
     public final static String[] FPS = new String[] {"0 (fullspeed)", "24",
             "-1 (off)"};
 
