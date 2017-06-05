@@ -145,23 +145,9 @@ Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@
 |                          | KSC265  vs. X264        | KSC265 vs. X264        | KSC265 vs. X265         | KSC265 vs. X265        | KSC265 vs. vp9          | KSC265 vs. vp9        |
 | ------------------------ | ----------------------- | ---------------------- | ----------------------- | ---------------------- | ----------------------- | --------------------- |
 | full-thread  comparisons | Bitsaving @same quality | Speedup @same  quality | Bitsaving @same quality | Speedup @same  bitrate | Bitsaving @same quality | Speedup @same bitrate |
-| Real-Time  Apps          | 44.60%                  | 0.20%                  | 35.10%                  | 119.80%                | 40.70%                  | 72.20%                |
-| Transcode                | 36.90%                  | 3.40%                  | 11.40%                  | 287.20%                | 18.4%                   | 338.4%                |
-| Best  Compress           | 35.30%                  | 44.60%                 | 10.10%                  | 110.40%                | 6.2%                    | 785.9%                |
+| Real-Time+               | 47.16%                  | -10.65%                | 28.70%                  | 121.29%                | 36.52%                  | 108.29%               |
+| Real-Time                | 45.0%                   | 0.7%                   | 4.6%                    | 235.3%                 | 41.1%                   | 70.6%                 |
+| Transcode                | 37.7%                   | -5.1%                  | 11.5%                   | 198.4%                 | 19.7%                   | 297.8%                |
+| Best Ratio               | 35.6%                   | 84.7%                  | 10.0%                   | 87.2%                  | 6.8%                    | 1021.6%               |
 
-The details are described as follows and in the excel document.
-
-### Real-Time Broadcasting
-
-When 1 thread is utilized, KSC265@veryfast achieves 45.0% BDRate savings with 7.7% speed up over X264@veryfast, 34.1% BDRate savings with 96.0% speed up over X265@ultrafast, and 42.4% BDRate savings with 28.1% speed up over vp9@lt.
-
-When all threads(4) are utilized, KSC265@veryfast achieves 44.6% BDRate savings with 0.2% speed up over X264@veryfast, 35.1% BDRate savings with 119.8% speed up over X265@ultrafast, and 40.7% BDRate savings with 72.2% speed up over vp9@lt.
-
-### Offline Transcoding
-When 1 thread is utilized, KSC265@slow achieves 37.4% BDRate savings with 0.5% speed decrease over X264@slow, 11.8% BDRate savings with 201.2% speed up over X265@slow, and 20.8% BDRate savings with 137.9% speed up over vp9@good.
-
-When all threads(4) are utilized, KSC265@slow achieves 36.9% BDRate savings with 3.4% speed up over X264@slow, 11.4% BDRate savings with 287.2% speed up over X265@slow, and 18.4% BDRate savings with 338.4% speed up over vp9@good.
-
-### Highest Compression ratio
-
-When all threads(4) are utilized, KSC265@veryslow achieves 35.3% BDRate savings with 44.6% speed up over X264@placebo, 10.1% BDRate savings with 110.4% speed up over X265@veryslow, and 6.2% BDRate savings with 785.9% speed up over vp9@best.
+The details are described in the excel document.
