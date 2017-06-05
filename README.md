@@ -134,9 +134,9 @@ On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 tim
 KSC265 encoder is compared with X265-v2.3,  X264 and vp9 on Win7@i5-4670 using following parameters:
 
 ```
-x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset [veryfast|slow|placebo] --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
+x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset [superfast|veryfast|slow|placebo] --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
 AppEncoder_x64.exe -b out.265 -i BQSquare_416x240_60.yuv -preset [veryfast|slow|veryslow] -threads 1/0 -psnr 2 -rc 1 -br [btrNumber] -frms 1000000 -iper [framerate * 10]
-x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset [ultrafast|slow|veryslow] --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq  --psnr  --bitrate [btrNumber] --frame-threads [1|0] --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
+x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset [superfast|veryfast|slow|veryslow] --fps [framerate] --aq-mode 0 --no-psy-rd --no-psy-rdoq  --psnr  --bitrate [btrNumber] --frame-threads [1|0] --no-wpp/--wpp --keyint [framerate * 10] --frames 1000000
 vpxenc.exe --codec=vp9 --passes=1 --[rt|goog|best] --fps=[framerate]/1 --i420 --end-usage=vbr --target-bitrate=[btrNumber] --kf-max-dist=[framerate * 10] --cpu-used=8 --threads=[1|4] --psnr -w 416 -h 240 -o out.vp9 BQSquare_416x240_60.yuv --frame-parallel=0
 ```
 
