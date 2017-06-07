@@ -1,6 +1,6 @@
 # *KSC265codec*
 
-
+It should be noted that, the libraries used in our ios/andriod demos have expiration time.
 
 ## ENCODER
 Usage: command line examples    
