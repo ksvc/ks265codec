@@ -1,4 +1,4 @@
-# *KSC265codec*
+# *KSC265codec(v2.5.4.0)*
 
 It should be noted that, the libraries used in our ios/andriod demos have expiration time.
 
