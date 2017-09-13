@@ -1,13 +1,13 @@
-# *KSC265codec(v2.5.4.0)*
+# *KSC265codec(v2.6.1.3)*
 
 It should be noted that, the libraries used in our ios/andriod demos have expiration time.
 
 ## ENCODER
 Usage: command line examples    
 ```
-AppEncoder_x64 -i p_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 1 -br 20000 -iper 128 -b test.265
-AppEncoder_x64 -i p_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
-AppEncoder_x64 -i p_3840x2160_50.yuv -preset veryfast -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 3 -crf 24 -iper 128 -b test.265
+AppEncoder_x64 -i p_3840x2160_50.yuv -preset ultrafast/veryfast/slow/veryslow -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 1 -br 20000 -iper 128 -b test.265
+AppEncoder_x64 -i p_3840x2160_50.yuv -preset ultrafast/veryfast/slow/veryslow -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 0 -qp 27 -iper 128 -b test.265
+AppEncoder_x64 -i p_3840x2160_50.yuv -preset ultrafast/veryfast/slow/veryslow -latency offline -wdt 3840 -hgt 2160 -fr 50 -rc 3 -crf 24 -iper 128 -b test.265
 ```
 
 
@@ -131,7 +131,7 @@ On average, as above table shows, KSC265 decoder can achieve more than 2/2.5 tim
 
 ## Performance of encoder
 
-KSC265 encoder is compared with X265-v2.3,  X264 and vp9 on Win7@i5-4670 using following parameters:
+KSC265 encoder is firstly compared with X265-v2.4,  X264 and vp9 on Win7@i7-4790@4threads using following parameters:
 
 ```
 x264.exe -o out.264 BQSquare_416x240_60.yuv --input-res 416x240 --preset [superfast|veryfast|slow|placebo] --fps [framerate] --profile high --aq-mode 0 --no-psy --psnr  --bitrate [btrNumber] --threads 1/0 --keyint [framerate * 10] --frames 1000000
@@ -140,14 +140,24 @@ x265.exe -o out.265 --input BQSquare_416x240_60.yuv --input-res 416x240 --preset
 vpxenc.exe --codec=vp9 --passes=1 --[rt|goog|best] --fps=[framerate]/1 --i420 --end-usage=vbr --target-bitrate=[btrNumber] --kf-max-dist=[framerate * 10] --cpu-used=8 --threads=[1|4] --psnr -w 416 -h 240 -o out.vp9 BQSquare_416x240_60.yuv --frame-parallel=0
 ```
 
-Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@30fps, compared to x264(20151215), 265-v2.3 and vp9 in the speed form of encoded frames per second (fps), the average performance of KS265 can be summarized by the follows. 
+Then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of game videos@30fps, compared to x264(20161020), x265-v2.4 and vp9 in the speed form of encoded frames per second (fps), the average performance of KS265 can be summarized by the follows. 
 
 |                          | KSC265  vs. X264        | KSC265 vs. X264        | KSC265 vs. X265         | KSC265 vs. X265        | KSC265 vs. vp9          | KSC265 vs. vp9        |
 | ------------------------ | ----------------------- | ---------------------- | ----------------------- | ---------------------- | ----------------------- | --------------------- |
 | full-thread  comparisons | Bitsaving @same quality | Speedup @same  quality | Bitsaving @same quality | Speedup @same  bitrate | Bitsaving @same quality | Speedup @same bitrate |
-| RealTime+                | 47.1%                   | -9.8%                  | 28.6%                   | 123.5%                 | 36.5%                   | 111.0%                |
-| RealTime                 | 45.0%                   | 2.3%                   | 34.2%                   | 84.4%                  | 41.1%                   | 73.5%                 |
-| Transcode                | 37.9%                   | -5.0%                  | 11.8%                   | 199.1%                 | 19.8%                   | 300.2%                |
-| Best Ratio               | 35.8%                   | 84.0%                  | 10.2%                   | 86.5%                  | 6.9%                    | 1015.9%               |
+| RealTime+                | 43.7%                   | -5.4%                  | 26.0%                   | 212.6%                 | 30.5%                   | 147.9%                |
+| RealTime                 | 41.2%                   | 8.9%                   | 34.5%                   | 123.2%                 | 38.0%                   | 75.5%                 |
+| Transcode                | 36.2%                   | -5.1%                  | 23.7%                   | 199.1%                 | 32.6%                   | 179.0%                |
+| Best Ratio               | 35.3%                   | 83.3%                  | 10.9%                   | 84.1%                  | 23.1%                   | 778.0%                |
+
+Secondly, then on test sequences of JCTVC CLASS-A ~ CLASS-E, and one class of showself videos@15fps, compared to x264(20161020), x265-v2.4 and vp9 in the speed form of encoded frames per second (fps), the average performance of KS265 on OPPOR9s@1thread and ipad min2 @1thread can be summarized by the follows. 
+
+|                          | Andriod&iOS             | Andriod                | iOS                    |
+| ------------------------ | ----------------------- | ---------------------- | ---------------------- |
+| full-thread  comparisons | Bitsaving @same quality | Speedup @same  quality | Speedup @same  quality |
+| superfast                | 43.9%                   | -4.1%                  | 6.3%                   |
+| veryfast                 | 43.4%                   | -2.2%                  | 1.2%                   |
+| fast                     | 38.0%                   | 7.3%                   | 4.7%                   |
+| medium                   | 36.2%                   | 4.8%                   | 7.1%                   |
 
 The details are described in the excel document.
