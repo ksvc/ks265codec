@@ -19,7 +19,7 @@ which specifies the encoding speed by the character string [preset_value], among
 
 -latency [latency_value],
 
-which specifies the encoding latency by the character string [lactency_value], among strings of "zerolatency", "livestreaming", "offline".
+which specifies the encoding latency by the character string [lactency_value], among strings of "zerolatency", "livestreaming", "offline". Note that, in the presets of ultrafast~veryfast, the latency under "livestreaming" and "offline" are the same.
 
 -i [input_filename], 
 
