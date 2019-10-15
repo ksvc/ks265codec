@@ -148,7 +148,7 @@ public class DecoderFragment extends BaseFragment implements DecoderSettingsFrag
         //0: ksc265
         //1: lenthevcdec
         int decoderType = mSettings.decoderIndex == 0 ? 0 : 1;
-        ret = mPlayer.prepare(decoderType, mSettings.getFPS() == -1 ? 1 : 0,
+        ret = mPlayer.prepare(getContext(),decoderType, mSettings.getFPS() == -1 ? 1 : 0,
                 num, mSettings.getFPS());
         if ( ret < 0 ) {
             Toast.makeText(getContext(),

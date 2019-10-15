@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.ksyun.media.ksy265codec.demo"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 17
         versionCode 1
         versionName "1.0.0"

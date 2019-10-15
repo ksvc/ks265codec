@@ -1,5 +1,7 @@
 package com.ksyun.media.ksy265codec.demo.encoder;
 
+import android.content.Context;
+
 import com.ksyun.media.ksy265codec.demo.ui.EncoderSettings;
 
 import java.io.File;
@@ -31,13 +33,13 @@ public class EncoderWrapper {
     }
 
     //return -1 if failed
-    public int encode() {
+    public int encode(Context context) {
         if (mSettings.getEncoderName().equals(EncoderSettings.Encoders[0])) {//KSC265
             int dotIndex = mInputFilePath.lastIndexOf(".");
             String fileName = mInputFilePath.substring(0, dotIndex);
             mOutputFilePath = fileName + ".265";
 
-            return native_ksy265_encoder(mInstance, mOutputFilePath,
+            return native_ksy265_encoder(context,mInstance, mOutputFilePath,
                     mSettings.getProfile(), mSettings.getDelay(),
                     mSettings.getWidth(), mSettings.getHeight(),
                     mSettings.getFps(), mSettings.getBitrate(),
@@ -128,7 +130,7 @@ public class EncoderWrapper {
                                          int width, int height,
                                          Float fps, int bitrate, int threads);
 
-    public native int native_ksy265_encoder(long ptr, String outputFilePath,
+    public native int native_ksy265_encoder(Context context,long ptr, String outputFilePath,
                                             String profile, String delay,
                                             int width, int height,
                                             Float fps, int bitrate, int threads);

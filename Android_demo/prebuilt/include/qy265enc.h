@@ -29,20 +29,22 @@ typedef enum QY265Tune_tag{
 }QY265Tune;
 
 typedef enum QY265Preset_tag{
-    QY265PRESET_SUPERFAST = 0,
-    QY265PRESET_VERYFAST = 1,
-    QY265PRESET_FAST = 2,
-    QY265PRESET_MEDIUM = 3,
-    QY265PRESET_SLOW = 4,
-    QY265PRESET_VERYSLOW = 5,
-    QY265PRESET_PLACEBO = 6,
+    QY265PRESET_ULTRAFAST = 0,
+    QY265PRESET_SUPERFAST = 1,
+    QY265PRESET_VERYFAST = 2,
+    QY265PRESET_FAST = 3,
+    QY265PRESET_MEDIUM = 4,
+    QY265PRESET_SLOW = 5,
+    QY265PRESET_SLOWER = 6,
+    QY265PRESET_VERYSLOW = 7,
+    QY265PRESET_PLACEBO = 8,
 }QY265Preset;
 
 typedef enum QY265Latency_tag{
     QY265LATENCY_ZERO = 0,
     QY265LATENCY_LOWDELAY = 1,
     QY265LATENCY_LIVESTREMING = 2,
-    QY265LATENCY_OFFLINE = 3,
+    QY265LATENCY_DEFAULT = 3,
 }QY265Latency;
 
 //base configuration
@@ -51,19 +53,32 @@ typedef struct QY265EncConfig{
     QY265Tune tune;    //
     QY265Preset preset;
     QY265Latency latency;
+    int profileId;         //currently, support 1 and 3 separately for main and main still profile
     int bHeaderBeforeKeyframe; //whether output vps,sps,pps before key frame, default 1. dis/enable 0/1
     int picWidth;          // input frame width
     int picHeight;         // input frame height
     double frameRate;      // input frame rate
     int bframes;           // num of bi-pred frames, -1: using default
     int temporalLayer;     // works with QY265LATENCY_ZERO, separate P frames into temporal layers, 0 or 1
+    
+    int vpp_denoise;       // vpp denoise 0 disable, 1 gentle, 2 medium, 3 aggressive
+    int vpp_edge;          // vpp edge enhance 0 disable, 1 gentle, 2 medium, 3 aggressive
+    int vpp_color;         // vpp color enhance 0 disable, 1 gentle, 2 medium, 3 aggressive
+    int vpp_hdr;           // vpp HDR enhance 0 disable, 1 enable
+    double vpp_hdr_strength;  // vpp HDR strength, 0~5
+    int vpp_hdr_iter;      // vpp HDR iteration, 2 or 3
+    double vpp_hdr_sigma_s; // vpp HDR parameter 0~100
+    double vpp_hdr_sigma_r; // vpp HDR parameter 0~100
+    double vpp_recur_filter;    // vpp Recursive Filter 0~30
 
-    int rc;                // rc type 0 disable,1 cbr,2 abr,3 crf, default 2
+    int rc;                // rc type 0 disable,1 cbr,2 abr,3 crf,4 cvbr,5 cvq, default 2
     int bitrateInkbps;     // target bit rate in kbps, valid when rctype is cbr abd vbr
     int vbv_buffer_size;   // buf size of vbv
     int vbv_max_rate;      // max rate of vbv
+    int vbv_min_rate;      // max rate of vbv
     int qp;                // valid when rctype is disable, default 26
     int crf;               // valid when rctype is crf,default 24
+    int visual_quality;    // valid when rctype is cvq,[70-100], default 95
     int iIntraPeriod;      // I-Frame period, -1 = only first
     int qpmin;              //minimal qp, valid when rc != 0, 0~51
     int qpmax;              //maximal qp, valid when rc != 0, 1~51, qpmax = 0 means 51
@@ -84,8 +99,8 @@ typedef struct QY265EncConfig{
          * 3 = SECAM, 4 = MAC, 5 = unspecified video format is the default */
         int video_format;
         /* video_full_range_flag indicates the black level and range of the luma
-         * and chroma signals as derived from E°‰Y, E°‰PB, and E°‰PR or E°‰R, E°‰G,
-         * and E°‰B real-valued component signals. The default is false */
+         * and chroma signals as derived from E'Y, E'PB, and E'PR or E'R, E'G,
+         * and E'B real-valued component signals. The default is false */
         int video_full_range_flag;
         /* colour_description_present_flag in the VUI. If this is set then
          * color_primaries, transfer_characteristics and matrix_coeffs are to be
@@ -101,9 +116,35 @@ typedef struct QY265EncConfig{
          * the red, blue and green primaries. The default is 2 */
         int matrix_coeffs;
     }vui;
-    //* debug
-    int logLevel;
+    //* tool list
+    int logLevel;          //log level (-1: dbg; 0: info; 1:warn; 2:err; 3:fatal)
+    int lookahead;         // rc lookahead settings
     int calcPsnr;          //0:not calc psnr; 1: print total psnr; 2: print each frame
+    int calcSsim;          //0:not calc ssim; 1: print total ssim; 2: print each frame
+    int shortLoadingForPlayer;  //reduce b frames after I frame, for shorting the loading time of VOD for some players
+    //ZEL_2PASS:parameters for 2pass
+    int  iPass; //Multi pass rate control,0,disable 2pass encode method; 1: first pass; 2: second pass;
+    char statFileName[256]; //log file produced from first pass, seet by user
+    double      fRateTolerance;//default 2.0f,0.5 is suitable to reduce the largest bitrate, and 0.1 is to make the bitrate stable
+    int  rdoq;//1:enabling rdoq
+    int  me;//0: DIA, 1: HEX, 2: UMH, 3:EPZS,
+    int  part;//enabling 2nxn, nx2n pu
+    int  do64;//1:enabling 64x64 cu
+    int  tuInter;//inter RQT tu depth, 0~3, -1 means auto
+    int  tuIntra;//intra RQT tu depth, 0~3, -1 means auto
+    int  smooth;//1: enabling strong intra smoothing
+    int  transskip;//1: enabling transform skip
+    int  subme;// 0 : disable 1 : fast, 2 : square full
+    int  satdInter;//1:enabling hardmad sad
+    int  satdIntra;//1:enabling hardmad sad
+    int  searchrange;//search range
+    int  refnum;// reference number 
+    int  ref0;//add interface for ref0
+    int  sao;//sao enabling, 0: disable; 1:faster; 2: faster; 3: usual; 4:complex
+    int  longTermRef;//0:disabling longterm reference 1:enable;
+    int  iAqMode;// adaptive quantization 0~3, 0: disable
+    double fAqStrength;//strength of adaptive quantizaiton, 0~3.0, default 1.0
+    int  rasl; // enable RASL NAL for CRA,default 1, if not enable RASL, then CRA is act like IDR
 }QY265EncConfig;
 
 // ****************************************
@@ -169,7 +210,7 @@ _h_dll_export int QY265EncoderEncodeHeaders(void* pEncoder,QY265Nal** pNals,int*
 * @param pInPic     input frame
 * @param pOutPic    output frame
 * @param bForceLogo add logo on the input frame ( when auth failed)
-* @return if succeed, return the total bin size of output, if failed, return the error code
+* @return if succeed, return 0; if failed, return the error code
 */
 _h_dll_export int QY265EncoderEncodeFrame(void* pEncoder, QY265Nal** pNals, int* iNalCount, QY265Picture* pInpic, QY265Picture* pOutpic, int bForceLogo);
 
@@ -178,9 +219,9 @@ _h_dll_export void QY265EncoderKeyFrameRequest(void* pEncoder);
 // current buffered frames 
 _h_dll_export int QY265EncoderDelayedFrames(void* pEncoder);
 
-static const char* const  qy265_preset_names[] = { "superfast", "veryfast", "fast", "medium", "slow", "veryslow", "placebo", 0 };
+static const char* const  qy265_preset_names[] = { "ultrafast", "superfast", "veryfast", "fast", "medium", "slow", "slower", "veryslow", "placebo", 0 };
 static const char* const  qy265_tunes_names[] = { "default", "selfshow", "game", "movie", "screen", 0 };
-static const char* const  qy265_latency_names[] = { "zerolatency", "lowdelay", "livestreaming", "offline", 0 };
+static const char* const  qy265_latency_names[] = { "zerolatency", "lowdelay", "livestreaming", "default", 0 };
 // get default config values by preset, tune and latency. enum format
 _h_dll_export int QY265ConfigDefault(QY265EncConfig* pConfig, QY265Preset preset, QY265Tune tune, QY265Latency latency);
 

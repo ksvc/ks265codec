@@ -43,6 +43,7 @@
 extern "C" {
 #include "lenthevcdec.h"
 #include "qy265dec.h"
+#include "qyauth_env.h"
 }
 
 #define LOG_TAG    "jniplayer"
@@ -551,7 +552,7 @@ MediaPlayer_setDataSource(JNIEnv *env, jobject thiz, jstring path)
 	return 0;
 }
 
-static int rawbs_prepare(int threads)
+static int rawbs_prepare(JNIEnv *env, jobject context, int threads)
 {
 	FILE *in_file;
 	int32_t got_frame, width, height, stride[3];
@@ -617,6 +618,11 @@ static int rawbs_prepare(int threads)
         config.threads = threads;
         config.bEnableOutputRecToFile = 0;
         config.strRecYuvFileName = NULL;
+		TCounterEnv* tCounterEnv = (TCounterEnv*) malloc(sizeof(TCounterEnv));
+		tCounterEnv->context = context;
+		env->GetJavaVM(&tCounterEnv->jvm);
+		config.pAuth = tCounterEnv;
+
         ksydec_ctx = QY265DecoderCreate(&config, &hr);
         if(ksydec_ctx == NULL) {
             LOGE("call QY265DecoderCreate fail..");
@@ -676,7 +682,7 @@ error_exit:
 
 
 static int
-MediaPlayer_prepare(JNIEnv *env, jobject thiz, jint decoderType, jint render, jint threadNumber, jfloat fps) {
+MediaPlayer_prepare(JNIEnv *env, jobject thiz, jobject context, jint decoderType, jint render, jint threadNumber, jfloat fps) {
     LOGD("MediaPlayer_prepare: %d threads, fps %f\n", threadNumber, fps);
     renderFPS = fps;
     if (fps == 0) {
@@ -693,7 +699,7 @@ MediaPlayer_prepare(JNIEnv *env, jobject thiz, jint decoderType, jint render, ji
 
     disable_render = render;
 
-	return rawbs_prepare(threadNumber);
+	return rawbs_prepare(env, context, threadNumber);
 
 }
 
@@ -916,7 +922,7 @@ static jstring MediaPlayer_getVersion(JNIEnv *env, jobject thiz) {
 
 static JNINativeMethod gMethods[] = {
     { "setDataSource", "(Ljava/lang/String;)I", (void *) MediaPlayer_setDataSource },
-    { "native_prepare", "(IIIF)I", (void *) MediaPlayer_prepare },
+    { "native_prepare", "(Landroid/content/Context;IIIF)I", (void *) MediaPlayer_prepare },
     { "native_start", "()I", (void *) MediaPlayer_start },
     { "native_stop", "()I", (void *) MediaPlayer_stop },
     { "getVideoWidth", "()I", (void *) MediaPlayer_getVideoWidth },

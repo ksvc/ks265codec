@@ -18,6 +18,7 @@ enum
     QY_NEED_MORE_DATA = (0x00000008), //need push more data
 #endif
     QY_BITSTREAM_ERROR = (0x00000009), // detecting bitstream error, can be ignored
+    QY_CTU_REENCODE = (0x81000000), //ctu reencode
 };
 
 enum NAL_UNIT_TYPE{

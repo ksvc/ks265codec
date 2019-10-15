@@ -7,6 +7,7 @@
 #include "x264.h"
 #include "qy265enc.h"
 #include "qy265def.h"
+#include "qyauth_env.h"
 #include "encoderwrapper.h"
 #include "log.h"
 
@@ -278,6 +279,7 @@ void ksy265log(const char* msg) {
 jint Java_com_ksyun_media_ksy265codec_demo_encoder_EncoderWrapper_native_1ksy265_1encoder
         (JNIEnv *env,
          jobject instance,
+         jobject context,
          jlong ptr,
          jstring path_,
          jstring profile_,
@@ -335,6 +337,10 @@ jint Java_com_ksyun_media_ksy265codec_demo_encoder_EncoderWrapper_native_1ksy265
     LOGD("265 fps %.6f", val);
     param.frameRate = val;
     param.bitrateInkbps = bitrate;
+    TCounterEnv* tCounterEnv = (TCounterEnv*) malloc(sizeof(TCounterEnv));
+    tCounterEnv->context = context;
+    (*env)->GetJavaVM(env, &tCounterEnv->jvm);
+    param.pAuth = tCounterEnv;
 
     param.calcPsnr = 1;
     QY265SetLogPrintf(ksy265log);

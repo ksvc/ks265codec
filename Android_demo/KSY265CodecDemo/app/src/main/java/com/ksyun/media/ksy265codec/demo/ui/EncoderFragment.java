@@ -125,7 +125,7 @@ public class EncoderFragment extends BaseFragment implements EncoderSettingsFrag
             return;
         }
 
-        if(encoder.encode() < 0) {
+        if(encoder.encode(getContext()) < 0) {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

@@ -38,7 +38,7 @@ JNIEXPORT jint JNICALL Java_com_ksyun_media_ksy265codec_demo_encoder_EncoderWrap
  * Signature: (JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Float;II)I
  */
 JNIEXPORT jint JNICALL Java_com_ksyun_media_ksy265codec_demo_encoder_EncoderWrapper_native_1ksy265_1encoder
-        (JNIEnv *, jobject, jlong, jstring, jstring, jstring, jint, jint, jobject, jint, jint);
+        (JNIEnv *, jobject, jobject , jlong, jstring, jstring, jstring, jint, jint, jobject, jint, jint);
 
 /*
  * Class:     com_ksyun_media_ksy265codec_demo_encoder_EncoderWrapper

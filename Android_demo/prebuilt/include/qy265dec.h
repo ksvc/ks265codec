@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////////
 //
-//         Qianyi H265 Codec Library
+//         KingSoft H265 Codec Library
 //
-//  Copyright(c) 2013-2014 Qianyi, Inc.
-//              www.qyvideo.cn
+//  Copyright(c) 2013-2014 KingSoft, Inc.
+//              www.KingSoft.cn
 //
 ///////////////////////////////////////////////////
 /************************************************************************************
@@ -33,6 +33,7 @@ typedef struct QY265FrameInfo {
     int nHeight;    // frame height
     long long pts;  // time stamp
     int bIllegalStream; // input bit stream is illegal
+    int poc;
 }QY265FrameInfo;
 
 // decoded frame with data and information
@@ -41,6 +42,9 @@ typedef struct QY265Frame {
     unsigned char* pData[3]; // Y U V
     short iStride[3];        // stride for each component
     QY265FrameInfo frameinfo;
+#ifdef EMSCRIPTEN//TEST_YUVPLANE
+    unsigned char* pYUVPlane; //liner buffer for yuv 420p 
+#endif
 }QY265Frame;
 
 

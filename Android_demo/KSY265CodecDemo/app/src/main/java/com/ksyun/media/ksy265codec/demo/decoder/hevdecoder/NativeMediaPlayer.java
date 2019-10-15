@@ -14,6 +14,7 @@ import android.view.Surface;
 import android.view.Surface.OutOfResourcesException;
 import android.view.SurfaceHolder;
 import android.widget.TextView;
+import android.content.Context;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -112,7 +113,7 @@ public class NativeMediaPlayer {
 		}
 	}
 
-	public int prepare(int type, int disableRender) {
+	public int prepare(Context context,int type, int disableRender) {
 		// android maintains the preferences for us, so use directly
 		int num = Settings.getInstance().getDecoderSettings().getThreads();
 		if (0 == num) {
@@ -127,12 +128,12 @@ public class NativeMediaPlayer {
 
 		float fps = Settings.getInstance().getDecoderSettings().getFPS();
 
-		return native_prepare(type, disableRender, num, fps);
+		return native_prepare(context,type, disableRender, num, fps);
 	}
 
-	public int prepare(int type, int disableRender,
+	public int prepare(Context context,int type, int disableRender,
 					   int threadNum, float fps) {
-		return native_prepare(type, disableRender, threadNum, fps);
+		return native_prepare(context,type, disableRender, threadNum, fps);
 	}
 
 	public int start() {
@@ -354,7 +355,7 @@ public class NativeMediaPlayer {
 
 	private native void native_init();
 
-	private native int native_prepare(int decoderType, int disableRender, int threadNum, float renderFPS);
+	private native int native_prepare(Context context,int decoderType, int disableRender, int threadNum, float renderFPS);
 
 	private native int native_start();
 

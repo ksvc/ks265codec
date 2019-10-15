@@ -1,5 +1,7 @@
 package com.ksyun.media.ksy265codec.demo.encoder;
 
+import android.content.Context;
+
 import com.ksyun.media.ksy265codec.demo.ui.EncoderSettings;
 
 /**
@@ -22,9 +24,9 @@ public class Encoder {
     }
 
     //return -1 if failed
-    public int encode() {
+    public int encode(Context context) {
         if (mWrapper != null) {
-            return mWrapper.encode();
+            return mWrapper.encode(context);
         }
         return -1;
     }
